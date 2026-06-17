@@ -250,6 +250,34 @@ Smoke tests verify data loading, ACT forward/backward, checkpoint writing, and b
 
 ## Formal Multi-seed Training
 
+`configs/base_act.yaml` 默认启用 WandB：
+
+```yaml
+use_wandb: true
+project_name: task2_lerobot_act_calvin
+```
+
+因此 `bash scripts/run_multiseed_4gpu.sh` 会为 8 个训练任务分别创建 WandB run。脚本额外设置：
+
+```bash
+WANDB_GROUP=multiseed_act_calvin
+```
+
+用于在 WandB 中把这些 seed run 归为同一组。运行前应先完成：
+
+```bash
+wandb login
+```
+
+如果远程网络暂时不稳定，可以使用离线记录：
+
+```bash
+WANDB_MODE=offline bash scripts/run_multiseed_4gpu.sh
+wandb sync wandb/
+```
+
+训练过程记录的关键指标包括 `train/train_action_l1_loss`、`train/total_loss`、`val/action_l1_loss`、`val/total_loss`、learning rate 和 step time；训练结束会上传 `train_metrics.csv` 和 final checkpoint artifact。
+
 Four-GPU schedule for four seeds per model:
 
 ```bash
