@@ -312,6 +312,15 @@ GPU3 -> ABC    seed45
 bash scripts/run_multiseed_eval_4gpu.sh
 ```
 
+该脚本会让每一个 seed 的 checkpoint 都参与完整 D offline L1 评测，而不是只评测某一个代表模型。也就是说，以下 8 个模型都会各自产生一套 `metrics.json`、`task_metrics.csv`、`episode_metrics.csv` 和 `chunk_horizon_metrics.csv`：
+
+```text
+act_A_only_seed42, act_A_only_seed43, act_A_only_seed44, act_A_only_seed45
+act_ABC_seed42,    act_ABC_seed43,    act_ABC_seed44,    act_ABC_seed45
+```
+
+这样 multi-seed 结论可以同时覆盖整体 D Action L1、task-wise Action L1、episode-wise error distribution 和 chunk-horizon Action L1，而不是只比较训练 loss 或单个 checkpoint。
+
 汇总 mean/std：
 
 ```bash
@@ -324,6 +333,11 @@ python scripts/10_collect_multiseed_metrics.py --seeds 42 43 44 45
 report_assets/result_tables/multiseed_per_seed_metrics.csv
 report_assets/result_tables/multiseed_summary_metrics.csv
 report_assets/result_tables/multiseed_summary_metrics.md
+report_assets/result_tables/multiseed_task_metrics.csv
+report_assets/result_tables/multiseed_task_metrics.md
+report_assets/result_tables/multiseed_episode_distribution_metrics.csv
+report_assets/result_tables/multiseed_episode_distribution_metrics.md
+report_assets/result_tables/multiseed_chunk_horizon_metrics.csv
 ```
 
 报告中如果完成 multi-seed，应使用 `mean ± std`，避免对单 seed 的小幅差异做过强结论。
