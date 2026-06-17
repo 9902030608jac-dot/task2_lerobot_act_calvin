@@ -1,50 +1,84 @@
 # task2_lerobot_act_calvin
 
-本仓库用于重建课程题目二：基于 LeRobot ACT 在 CALVIN 数据集上的跨环境泛化实验。目标不是堆结果，而是建立一套可复现、可审计、可扩展的实验流程：先完成合规的 zero-shot D offline action error 评估，再补充 task-wise、episode-wise、chunk-horizon 和 multi-seed 分析；online rollout success rate 作为探索性任务保留。
+本仓库用于完成课程题目二：基于 LeRobot ACT 的 CALVIN 跨环境泛化实验。实验采用统一的训练、评估和统计协议，比较只在环境 A 训练的 ACT policy 与在环境 A/B/C 联合训练的 ACT policy 在未见环境 D 上的 zero-shot 表现。
 
-## 实验问题
+## Research Objective
 
-课程要求是在 CALVIN 数据集上使用 LeRobot 框架中集成的 ACT 算法：
+实验回答两个问题：
 
-- 仅使用环境 A 训练一个基础视觉-动作策略模型 ACT-A-only。
-- 使用环境 A/B/C 训练一个多环境策略模型 ACT-ABC。
-- 在未见过的环境 D 上做 zero-shot 测试。
-- 评估 Success Rate 或动作误差。
-- 重点分析 ACT 的 Action Chunking 在跨环境视觉分布偏移下的鲁棒性。
+1. 多环境训练是否比单环境训练带来更好的 zero-shot 泛化。
+2. ACT 的 Action Chunking 在跨环境视觉分布偏移下是否保持稳定的动作序列预测。
 
-本仓库采用如下分层实验设计：
+核心对比：
 
-| Priority | Task | Requires Retraining | Metric/Artifact | Role |
-| --- | --- | --- | --- | --- |
-| P0 | A-only vs ABC 主实验 | Yes | D offline Action L1 | 满足题目基本要求 |
-| P1 | task-wise offline Action L1 | No, after checkpoints exist | `task_metrics.csv` | 分析哪些任务更鲁棒 |
-| P2 | episode-wise error distribution | No, after checkpoints exist | `episode_metrics.csv`, boxplot | 分析轨迹级误差分布和失败案例 |
-| P3 | chunk-horizon error analysis | No, after checkpoints exist | `chunk_horizon_metrics.csv`, horizon curve | 对应 ACT Action Chunking 机制 |
-| P4 | multi-seed | Yes | mean/std across seeds | 增强可信度 |
-| P5 | online rollout Success Rate | Extra environment integration | closed-loop success rate | 探索性任务 |
+| Model | Training Environments | Test Environment | Policy |
+| --- | --- | --- | --- |
+| ACT-A-only | A | D | LeRobot ACT |
+| ACT-ABC | A/B/C | D | LeRobot ACT |
 
-`P5` 被放在最后不是因为它不重要，而是因为它需要完整 CALVIN simulator、task oracle、observation/action adapter 和 ACT action chunk 执行协议。没有这些接口时，不应伪造 Success Rate。
+环境 D 只用于最终 zero-shot evaluation，不参与训练、验证、调参或模型选择。
 
-## 核心假设
+## Experimental Design
 
-训练环境和测试环境的关系：
+本项目的默认正式实验是四 seed 受控对比：
 
 ```text
-ACT-A-only: train on A       -> zero-shot test on D
-ACT-ABC:    train on A/B/C   -> zero-shot test on D
+seeds = 42, 43, 44, 45
+models = ACT-A-only, ACT-ABC
+training jobs = 2 models x 4 seeds = 8
+evaluation jobs = 8 checkpoints x D offline evaluation
 ```
 
-环境 D 必须保持未见状态，不得参与训练、调参或模型选择。A-only 和 ABC 除训练数据来源外，ACT 架构、chunk size、batch size、学习率、训练 step、optimizer、loss、图像/状态/动作预处理和评估脚本都应保持一致。
+每一个 seed 训练出的 checkpoint 都必须参与完整 D 评估。最终报告使用 `mean ± std`，并保留 per-seed 指标。
 
-## 数据集结构
+受控变量：
 
-推荐使用 Hugging Face 数据集：
+| Category | Controlled Setting |
+| --- | --- |
+| Algorithm | LeRobot ACT |
+| Inputs | static RGB image, wrist RGB image, robot state |
+| Output | action chunk |
+| Test split | CALVIN D |
+| Metrics | offline Action L1, task-wise Action L1, episode-wise distribution, chunk-horizon Action L1 |
+| Difference | training data source only |
+
+ACT-A-only 与 ACT-ABC 必须保持相同网络结构、chunk size、batch size、learning rate、optimizer、loss、训练步数、数据预处理和评估脚本。
+
+## Evaluation Protocol
+
+主评估指标是 D 环境 offline Action L1。该指标在 D 专家轨迹上比较模型预测动作与专家动作：
+
+```text
+offline_action_l1 = mean(abs(predicted_action_chunk - expert_action_chunk))
+```
+
+该评估是 open-loop / offline evaluation，不等价于 closed-loop Success Rate。题目允许评估 Success Rate 或动作误差，本仓库默认采用动作误差，并将 online rollout Success Rate 作为探索性扩展。
+
+正式 D 评估输出四类结果：
+
+| Output | Purpose |
+| --- | --- |
+| `metrics.json` | 整体 D Action L1 和 action-dimension error |
+| `task_metrics.csv` | 按 `task_index` / task description 聚合的 D Action L1 |
+| `episode_metrics.csv` | 按 episode 聚合的轨迹级 Action L1 |
+| `chunk_horizon_metrics.csv` | ACT chunk 内第 1 到第 `chunk_size` 步的 Action L1 |
+
+这四类指标共同支撑报告分析：
+
+- 整体 D Action L1：回答哪个训练设置整体更好。
+- task-wise Action L1：回答哪些任务更受益于多环境训练。
+- episode-wise distribution：观察轨迹级误差分布和高误差 episode。
+- chunk-horizon Action L1：分析 ACT Action Chunking 在未来动作序列上的稳定性。
+
+## Dataset Interface
+
+推荐数据源：
 
 ```text
 xiaoma26/calvin-lerobot
 ```
 
-远程实测该数据集是 LeRobot v2.1 风格。每个 split 的典型结构如下：
+数据放置路径：
 
 ```text
 data/raw/xiaoma26_calvin_lerobot/
@@ -52,33 +86,31 @@ data/raw/xiaoma26_calvin_lerobot/
 ├── splitB/
 ├── splitC/
 └── splitD/
-    ├── meta/
-    │   ├── info.json
-    │   ├── tasks.jsonl
-    │   ├── episodes.jsonl
-    │   └── episodes_stats.jsonl
-    └── data/
-        └── chunk-xxx/
-            └── episode_xxxxxx.parquet
 ```
 
-D split 中存在任务和轨迹结构：
+每个 split 采用 LeRobot v2.1 风格目录：
 
 ```text
-task_index/task descriptions: 389
-episodes:                     5124
-frames:                       308918
+splitD/
+├── meta/
+│   ├── info.json
+│   ├── tasks.jsonl
+│   ├── episodes.jsonl
+│   └── episodes_stats.jsonl
+└── data/
+    └── chunk-xxx/
+        └── episode_xxxxxx.parquet
 ```
 
-关系是：
+D split 中的层级关系：
 
 ```text
 task description
   -> multiple episodes
 episode
-  -> continuous trajectory for one task
+  -> continuous trajectory
 frame
-  -> one timestep inside an episode
+  -> one timestep
 ```
 
 `episodes.jsonl` 示例：
@@ -95,9 +127,17 @@ frame
 }
 ```
 
-这里的 `episode_index` 是当前 split 内重新编号后的轨迹 ID；`source_start_frame/source_end_frame` 是原始 CALVIN 数据流里的来源位置。两者是追溯关系，不要求按大小顺序对应。
+字段含义：
 
-每个 parquet frame 包含：
+| Field | Meaning |
+| --- | --- |
+| `episode_index` | 当前 split 内的 episode ID |
+| `tasks` | 该 episode 对应的任务描述 |
+| `length` | episode 内 frame 数 |
+| `source_*` | 原始 CALVIN 数据流中的来源位置 |
+| `scene` | 环境 ID |
+
+parquet frame 字段：
 
 ```text
 image
@@ -113,47 +153,49 @@ source_frame_index
 source_episode_index
 ```
 
-本仓库的 v2.1 adapter 会读取 `task_index` 并通过 `meta/tasks.jsonl` 映射到自然语言任务描述，用于 task-wise offline action L1 分析。
+## ACT Dataset Adapter
 
-## 为什么使用 v2.1 Adapter
+仓库中的 `CalvinV21ActDataset` 负责把 CALVIN v2.1 parquet 数据映射为 LeRobot ACTPolicy batch。模型、loss、optimizer 和反向传播仍由 LeRobot ACT 实现；adapter 只负责数据接口。
 
-远程环境中 `lerobot==0.5.1` 默认偏向 v3.0 数据格式，直接使用官方 `LeRobotDataset` 加载 v2.1 CALVIN 数据会遇到版本兼容和 HF Datasets cache 性能问题。之前验证过 v2.1 到 v3.0 转换路径，但完整转换会占用额外磁盘，并且在 `episodes_stats.jsonl` 字段兼容性上需要修补。
+字段映射：
 
-本仓库保留 LeRobot 的 ACTPolicy/ACTConfig，数据层使用轻量 adapter 直接读取 v2.1 parquet：
-
-| Raw Field | ACT Batch Field |
+| CALVIN v2.1 Field | ACT Batch Field |
 | --- | --- |
 | `image` | `observation.images.rgb_static` |
 | `wrist_image` | `observation.images.rgb_gripper` |
 | `state` | `observation.state` |
-| future `actions` chunk | `action` |
-| episode end padding | `action_is_pad` |
+| future `actions` | `action` |
+| episode-end padding | `action_is_pad` |
 | `task_index` + `tasks.jsonl` | `task_index`, `task` |
 | episode metadata | `episode_index`, `frame_index`, `env_id` |
 
-这仍然满足“使用 LeRobot 框架中集成 ACT 算法”的要求：模型、loss、optimizer 前后向都由 LeRobot ACT policy 完成；自定义部分只是把课程数据集映射成 ACT batch。
+Action chunk 构造规则：
 
-## 目录结构
+```text
+sample at frame t -> actions[t : t + chunk_size]
+```
+
+chunk 只在同一个 episode 内构造。若 episode 剩余长度不足 `chunk_size`，则使用末尾动作 padding，并通过 `action_is_pad` 标记。
+
+## Repository Structure
 
 ```text
 task2_lerobot_act_calvin/
-├── configs/
-├── scripts/
-├── src/
-├── data/
-│   ├── raw/             # 不进 git
-│   └── processed/       # 不进 git
-├── outputs/             # 不进 git
-├── logs/                # 不进 git
-├── checkpoints/         # 不进 git
-└── report_assets/
+├── configs/              # Training and evaluation configs
+├── scripts/              # Command entrypoints
+├── src/                  # Dataset, training, evaluation, plotting utilities
+├── data/                 # Ignored by git
+├── outputs/              # Ignored by git
+├── logs/                 # Ignored by git
+├── checkpoints/          # Ignored by git
+└── report_assets/        # Generated report tables and notes
 ```
 
-本重建仓库不包含旧实验结果、旧 checkpoint、原始数据集或远程缓存。所有大文件通过 `.gitignore` 排除。
+`.gitignore` excludes datasets, checkpoints, logs, WandB cache, and generated outputs.
 
-## 环境安装
+## Environment Setup
 
-建议 Python 3.12：
+Recommended environment:
 
 ```bash
 conda create -n lerobot-act-calvin python=3.12 -y
@@ -162,29 +204,23 @@ python -m pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 ```
 
-如果 GPU driver 与默认 PyTorch CUDA wheel 不匹配，先按 PyTorch 官方说明安装对应版本，再安装：
+If the machine requires a different PyTorch CUDA build, install PyTorch first, then install the remaining dependencies:
 
 ```bash
 pip install -r requirements-no-torch.txt
 ```
 
-检查环境：
+Environment check:
 
 ```bash
 python scripts/00_check_env.py --data_root data/raw --require_cuda true
 ```
 
-长期任务建议使用 `nohup`、`tmux` 或 `screen`，避免 SSH 断开导致训练中断。
+For remote GPU runs, use `tmux`, `screen`, or `nohup` so that jobs survive SSH disconnects.
 
-## 数据准备
+## Data Preparation
 
-推荐先将 HF 数据下载到：
-
-```text
-data/raw/xiaoma26_calvin_lerobot/
-```
-
-如果网络不稳定，可使用 `HF_ENDPOINT=https://hf-mirror.com` 或本项目下载脚本。数据下载完成后生成 processed manifest：
+Create processed manifests:
 
 ```bash
 python scripts/02_prepare_dataset.py --config configs/train_A_only.yaml
@@ -192,11 +228,11 @@ python scripts/02_prepare_dataset.py --config configs/train_ABC.yaml
 python scripts/02_prepare_dataset.py --config configs/eval_A_on_D.yaml
 ```
 
-`data/processed/*/source_datasets.json` 会记录每个 processed split 对应的原始 v2.1 split 路径。正式训练时实际由 `CalvinV21ActDataset` 直接读取原始 parquet。
+The processed directories store lightweight manifests pointing back to the raw v2.1 split directories. Formal training and evaluation read parquet files through `CalvinV21ActDataset`.
 
-## 单 Seed 主实验
+## Smoke Tests
 
-先跑短 smoke test：
+Before formal training:
 
 ```bash
 python scripts/03_train_act.py \
@@ -210,124 +246,97 @@ python scripts/03_train_act.py \
   --override num_train_steps=10 save_interval=5 log_interval=1 use_wandb=false max_train_episodes_per_split=64
 ```
 
-正式单 seed：
+Smoke tests verify data loading, ACT forward/backward, checkpoint writing, and basic metric logging. They are not reported as final experiments.
 
-```bash
-python scripts/03_train_act.py --config configs/train_A_only.yaml --device cuda
-python scripts/03_train_act.py --config configs/train_ABC.yaml --device cuda
-```
+## Formal Multi-seed Training
 
-## D Offline Evaluation
-
-本项目主评估是 D 环境 offline Action L1。它不需要 simulator，读取 D 专家轨迹，比较模型预测 action chunk 与专家 action chunk：
-
-```bash
-python scripts/04_eval_on_D.py \
-  --config configs/eval_A_on_D.yaml \
-  --mode offline \
-  --device cuda \
-  --override use_wandb=false batch_size=128 num_workers=8 max_prediction_records=1000
-
-python scripts/04_eval_on_D.py \
-  --config configs/eval_ABC_on_D.yaml \
-  --mode offline \
-  --device cuda \
-  --override use_wandb=false batch_size=128 num_workers=8 max_prediction_records=1000
-```
-
-输出：
-
-```text
-outputs/eval/A_only_on_D/
-├── metrics.json
-├── predictions.jsonl
-├── task_metrics.csv
-├── episode_metrics.csv
-├── chunk_horizon_metrics.csv
-├── failure_cases.json
-└── eval_log.txt
-```
-
-`metrics.json` 是整体 D 指标；`task_metrics.csv` 是按任务描述聚合；`episode_metrics.csv` 是按轨迹聚合；`chunk_horizon_metrics.csv` 是 ACT action chunk 的每个未来步平均误差。
-
-`max_prediction_records` 只限制逐样本 prediction 明细保存数量，不影响整体、task-wise、episode-wise 或 chunk-horizon 指标计算。
-
-## 诊断图
-
-单 seed 或 multi-seed 中任意一对 A-only/ABC 评估完成后，可以画 D 诊断图：
-
-```bash
-python scripts/09_plot_d_diagnostics.py \
-  --a-dir outputs/eval/A_only_on_D \
-  --abc-dir outputs/eval/ABC_on_D \
-  --output-dir outputs/figures
-```
-
-主要输出：
-
-```text
-outputs/figures/task_wise_action_l1_delta_on_D.png
-outputs/figures/episode_wise_action_l1_boxplot_on_D.png
-outputs/figures/action_error_by_chunk_step_on_D.png
-outputs/figures/task_wise_delta.csv
-```
-
-报告优先使用 `action_error_by_chunk_step_on_D.png` 来分析 ACT Action Chunking。横轴为未来 chunk step，纵轴为该未来步 7 维动作平均误差。
-
-## 4 GPU Multi-seed 计划
-
-如果有四张 32GB GPU，推荐每个模型跑 4 个 seed：
-
-```text
-seeds = 42, 43, 44, 45
-models = ACT-A-only, ACT-ABC
-total training jobs = 8
-```
-
-执行：
+Four-GPU schedule for four seeds per model:
 
 ```bash
 bash scripts/run_multiseed_4gpu.sh
 ```
 
-调度策略：
+Schedule:
 
 ```text
 Wave 1:
-GPU0 -> A-only seed42
-GPU1 -> ABC    seed42
-GPU2 -> A-only seed43
-GPU3 -> ABC    seed43
+GPU0 -> act_A_only seed42
+GPU1 -> act_ABC    seed42
+GPU2 -> act_A_only seed43
+GPU3 -> act_ABC    seed43
 
 Wave 2:
-GPU0 -> A-only seed44
-GPU1 -> ABC    seed44
-GPU2 -> A-only seed45
-GPU3 -> ABC    seed45
+GPU0 -> act_A_only seed44
+GPU1 -> act_ABC    seed44
+GPU2 -> act_A_only seed45
+GPU3 -> act_ABC    seed45
 ```
 
-对应评估：
+Outputs:
+
+```text
+outputs/train/act_A_only_seed42/
+outputs/train/act_A_only_seed43/
+outputs/train/act_A_only_seed44/
+outputs/train/act_A_only_seed45/
+outputs/train/act_ABC_seed42/
+outputs/train/act_ABC_seed43/
+outputs/train/act_ABC_seed44/
+outputs/train/act_ABC_seed45/
+```
+
+Each training output should contain:
+
+```text
+checkpoints/final/checkpoint.pt
+train_metrics.csv
+config_snapshot.yaml
+```
+
+## Formal D Evaluation
+
+Evaluate every trained checkpoint on D:
 
 ```bash
 bash scripts/run_multiseed_eval_4gpu.sh
 ```
 
-该脚本会让每一个 seed 的 checkpoint 都参与完整 D offline L1 评测，而不是只评测某一个代表模型。也就是说，以下 8 个模型都会各自产生一套 `metrics.json`、`task_metrics.csv`、`episode_metrics.csv` 和 `chunk_horizon_metrics.csv`：
+This produces one D evaluation directory per checkpoint:
 
 ```text
-act_A_only_seed42, act_A_only_seed43, act_A_only_seed44, act_A_only_seed45
-act_ABC_seed42,    act_ABC_seed43,    act_ABC_seed44,    act_ABC_seed45
+outputs/eval/act_A_only_seed42_on_D/
+outputs/eval/act_A_only_seed43_on_D/
+outputs/eval/act_A_only_seed44_on_D/
+outputs/eval/act_A_only_seed45_on_D/
+outputs/eval/act_ABC_seed42_on_D/
+outputs/eval/act_ABC_seed43_on_D/
+outputs/eval/act_ABC_seed44_on_D/
+outputs/eval/act_ABC_seed45_on_D/
 ```
 
-这样 multi-seed 结论可以同时覆盖整体 D Action L1、task-wise Action L1、episode-wise error distribution 和 chunk-horizon Action L1，而不是只比较训练 loss 或单个 checkpoint。
+Each directory includes:
 
-汇总 mean/std：
+```text
+metrics.json
+task_metrics.csv
+episode_metrics.csv
+chunk_horizon_metrics.csv
+predictions.jsonl
+failure_cases.json
+eval_log.txt
+```
+
+`predictions.jsonl` is capped by `max_prediction_records` to control file size. Aggregate metrics use the full D split.
+
+## Metric Aggregation
+
+Aggregate per-seed and cross-seed metrics:
 
 ```bash
 python scripts/10_collect_multiseed_metrics.py --seeds 42 43 44 45
 ```
 
-输出：
+Generated tables:
 
 ```text
 report_assets/result_tables/multiseed_per_seed_metrics.csv
@@ -340,51 +349,86 @@ report_assets/result_tables/multiseed_episode_distribution_metrics.md
 report_assets/result_tables/multiseed_chunk_horizon_metrics.csv
 ```
 
-报告中如果完成 multi-seed，应使用 `mean ± std`，避免对单 seed 的小幅差异做过强结论。
+Interpretation:
 
-## Online Rollout Success Rate 探索任务
+| Table | Interpretation |
+| --- | --- |
+| `multiseed_summary_metrics.*` | overall D Action L1 mean/std |
+| `multiseed_task_metrics.*` | per-task Action L1 mean/std |
+| `multiseed_episode_distribution_metrics.*` | episode-level distribution summary |
+| `multiseed_chunk_horizon_metrics.csv` | chunk step error mean/std |
 
-Success Rate 是最完整指标，但它不是离线数据集直接能算出的字段。它需要：
+## Diagnostic Plots
 
-- CALVIN D simulator 能 reset/step。
-- D 环境资产和相机观测可用。
-- task initialization 和 task oracle 可用。
-- simulator observation 转换成训练时的 `rgb_static/rgb_gripper/state`。
-- ACT 输出的 `[chunk_size, 7]` action chunk 转换成环境逐步执行动作。
-- 明确每几步重新预测 chunk，是否使用 temporal ensemble。
+For a selected seed or representative pair of evaluation directories:
 
-因此，本仓库当前 rollout 模式只写出 `success_rate: null`，不会伪造结果。若时间允许，应新增一个 `calvin_rollout_adapter`，在官方 CALVIN benchmark 协议下做 task-wise success rate。
-
-## 报告写法建议
-
-严谨表述：
-
-```text
-This work reports offline action error on the held-out D environment, which is allowed by the assignment. The metric evaluates imitation accuracy under visual distribution shift by comparing predicted action chunks with expert action chunks. It should not be interpreted as closed-loop task success.
+```bash
+python scripts/09_plot_d_diagnostics.py \
+  --a-dir outputs/eval/act_A_only_seed42_on_D \
+  --abc-dir outputs/eval/act_ABC_seed42_on_D \
+  --output-dir outputs/figures
 ```
 
-如果只有单 seed：
+Outputs:
 
 ```text
-Under a single-seed offline evaluation, ACT-ABC achieves lower D action error than ACT-A-only. This suggests improved offline generalization, but statistical significance requires multi-seed training.
+outputs/figures/task_wise_action_l1_delta_on_D.png
+outputs/figures/episode_wise_action_l1_boxplot_on_D.png
+outputs/figures/action_error_by_chunk_step_on_D.png
+outputs/figures/task_wise_delta.csv
 ```
 
-如果完成 multi-seed：
+The chunk-horizon plot is the main figure for Action Chunking analysis. The x-axis is future chunk step; the y-axis is mean absolute action error.
+
+## Online Rollout Success Rate
+
+Online rollout is defined as an exploratory extension:
 
 ```text
-We report mean and standard deviation across four seeds. This reduces the risk that the observed A-only vs ABC difference is caused by random initialization or data order.
+policy observes current simulator state
+-> predicts action chunk
+-> action adapter selects executable action(s)
+-> simulator steps
+-> task oracle checks success
+-> repeat until success or max steps
 ```
 
-Action Chunking 分析应结合：
+Required components:
 
-- 整体 D Action L1。
-- task-wise delta。
-- episode-wise distribution。
-- chunk-horizon curve。
+| Component | Requirement |
+| --- | --- |
+| CALVIN simulator | reset and step environment D |
+| observation adapter | match training inputs: static image, wrist image, state |
+| action adapter | map ACT action chunk to simulator actions |
+| task oracle | compute task success |
+| rollout scheduler | decide chunk refresh and temporal ensemble behavior |
 
-## GitHub 上传
+Until these components are implemented and verified, `success_rate` remains null. Offline Action L1 is the formal metric for this repository.
 
-这是一个重建仓库。确认不含 `data/`、`outputs/`、`logs/`、`checkpoints/`、`wandb/` 等大文件后：
+## Report Checklist
+
+The final report should include:
+
+- Experimental setting: ACT-A-only vs ACT-ABC, zero-shot D.
+- Dataset split and D isolation statement.
+- Fair comparison table for fixed hyperparameters.
+- Overall D Action L1 mean/std across seeds.
+- Task-wise D Action L1 analysis.
+- Episode-wise error distribution.
+- Chunk-horizon error curve for Action Chunking.
+- WandB training and validation curves.
+- Limitation: offline action error is not closed-loop Success Rate.
+- Optional extension plan for online rollout Success Rate.
+
+Recommended conclusion language:
+
+```text
+We evaluate zero-shot generalization on held-out environment D using offline Action L1, comparing predicted ACT action chunks against expert action chunks. This metric measures imitation accuracy under visual distribution shift and should not be interpreted as closed-loop task success. Multi-seed results are reported as mean ± standard deviation.
+```
+
+## GitHub
+
+Initialize and push:
 
 ```bash
 git init
@@ -394,5 +438,3 @@ git branch -M main
 git remote add origin https://github.com/9902030608jac-dot/task2_lerobot_act_calvin.git
 git push -u origin main
 ```
-
-如果远程仓库已有历史且需要覆盖，应先确认后再处理，避免误删已有代码。
