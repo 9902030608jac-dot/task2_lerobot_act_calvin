@@ -1,0 +1,8 @@
+base_config: configs/base_act.yaml
+
+run_name: eval_A_only_on_D
+checkpoint_path: outputs/train/act_A_only/checkpoints/final
+test_env: D
+hf_dataset_subdirs: ["splitD"]
+dataset_path: data/processed/calvin_D_lerobot
+output_dir: outputs/eval/A_only_on_D

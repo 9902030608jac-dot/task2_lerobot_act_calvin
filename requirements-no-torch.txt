@@ -1,0 +1,17 @@
+# Use this file when you need to install torch/torchvision separately for a
+# specific CUDA driver/runtime. Install torch first from:
+# https://pytorch.org/get-started/locally/
+
+lerobot==0.5.1
+numpy==2.2.6
+pandas==2.2.3
+pyarrow==21.0.0
+PyYAML==6.0.2
+tqdm==4.67.1
+matplotlib==3.10.7
+huggingface-hub==1.1.5
+wandb==0.24.0
+accelerate==1.10.1
+safetensors==0.6.2
+opencv-python-headless==4.12.0.88
+Pillow==12.0.0

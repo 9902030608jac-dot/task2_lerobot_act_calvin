@@ -1,0 +1,7 @@
+base_config: configs/base_act.yaml
+
+run_name: act_A_only
+train_envs: ["A"]
+hf_dataset_subdirs: ["splitA"]
+dataset_path: data/processed/calvin_A_lerobot
+output_dir: outputs/train/act_A_only

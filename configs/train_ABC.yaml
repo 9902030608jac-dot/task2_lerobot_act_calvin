@@ -1,0 +1,7 @@
+base_config: configs/base_act.yaml
+
+run_name: act_ABC
+train_envs: ["A", "B", "C"]
+hf_dataset_subdirs: ["splitA", "splitB", "splitC"]
+dataset_path: data/processed/calvin_ABC_lerobot
+output_dir: outputs/train/act_ABC

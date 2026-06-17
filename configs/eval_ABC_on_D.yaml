@@ -1,0 +1,8 @@
+base_config: configs/base_act.yaml
+
+run_name: eval_ABC_on_D
+checkpoint_path: outputs/train/act_ABC/checkpoints/final
+test_env: D
+hf_dataset_subdirs: ["splitD"]
+dataset_path: data/processed/calvin_D_lerobot
+output_dir: outputs/eval/ABC_on_D

@@ -1,0 +1,36 @@
+# Python compatibility:
+#   LeRobot 0.5.x requires Python >= 3.12.
+#
+# GPU compatibility:
+#   This file targets Linux GPU machines with recent NVIDIA drivers and CUDA 12.8 wheels.
+#   If your rented GPU image has an older driver, install the matching PyTorch wheel first
+#   from https://pytorch.org/get-started/locally/ and then install the remaining packages.
+
+--index-url https://download.pytorch.org/whl/cu128
+--extra-index-url https://pypi.org/simple
+
+# Core deep learning stack. These versions are inside LeRobot 0.5.x's supported
+# torch>=2.7,<2.12 and torchvision>=0.22,<0.27 window.
+torch==2.7.1
+torchvision==0.22.1
+
+# LeRobot stable PyPI release. PyPI currently publishes 0.5.1; main branch may
+# show a newer development version, but pinning PyPI stable avoids resolver breaks.
+lerobot==0.5.1
+
+# Project direct dependencies. Versions are chosen to stay within LeRobot's
+# current resolver bounds and to work on Python 3.12.
+numpy==2.2.6
+pandas==2.2.3
+pyarrow==21.0.0
+PyYAML==6.0.2
+tqdm==4.67.1
+matplotlib==3.10.7
+huggingface-hub==1.1.5
+wandb==0.24.0
+accelerate==1.10.1
+safetensors==0.6.2
+
+# Useful for image/video-backed LeRobot datasets and local inspection scripts.
+opencv-python-headless==4.12.0.88
+Pillow==12.0.0
