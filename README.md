@@ -218,9 +218,108 @@ python scripts/00_check_env.py --data_root data/raw --require_cuda true
 
 For remote GPU runs, use `tmux`, `screen`, or `nohup` so that jobs survive SSH disconnects.
 
-## Data Preparation
+## Data Acquisition
 
-Create processed manifests:
+The raw CALVIN LeRobot dataset should be downloaded before manifest generation. The default target directory is:
+
+```text
+data/raw/xiaoma26_calvin_lerobot/
+```
+
+The repository provides two supported download paths.
+
+### Option A: Resumable multi-thread curl downloader
+
+This is the recommended path for large remote GPU machines. It lists the requested split directories through the Hugging Face Hub API, downloads concrete files with `curl`, uses `curl -C -` for resume, skips files whose local size already matches the remote size, and runs multiple workers in parallel.
+
+Download all four splits:
+
+```bash
+python scripts/download_hf_split_with_curl.py \
+  --repo_id xiaoma26/calvin-lerobot \
+  --revision main \
+  --endpoint https://hf-mirror.com \
+  --local_dir data/raw/xiaoma26_calvin_lerobot \
+  --subdir splitA \
+  --subdir splitB \
+  --subdir splitC \
+  --subdir splitD \
+  --workers 16 \
+  --retries 30 \
+  --retry_sleep 10
+```
+
+For a smaller first-stage setup, download only the required splits:
+
+```bash
+# A-only training plus D evaluation
+python scripts/download_hf_split_with_curl.py \
+  --endpoint https://hf-mirror.com \
+  --local_dir data/raw/xiaoma26_calvin_lerobot \
+  --subdir splitA \
+  --subdir splitD \
+  --workers 16 \
+  --retries 30 \
+  --retry_sleep 10
+
+# Add B/C before ACT-ABC training
+python scripts/download_hf_split_with_curl.py \
+  --endpoint https://hf-mirror.com \
+  --local_dir data/raw/xiaoma26_calvin_lerobot \
+  --subdir splitB \
+  --subdir splitC \
+  --workers 16 \
+  --retries 30 \
+  --retry_sleep 10
+```
+
+The downloader writes:
+
+```text
+data/raw/xiaoma26_calvin_lerobot/curl_download_manifest.json
+```
+
+It can be rerun safely after interruption. Existing complete files are marked as `skip`, incomplete files resume from the previous byte offset.
+
+### Option B: HF CLI through prepare script
+
+The config also supports Hugging Face CLI download through the prepare script:
+
+```bash
+python scripts/02_prepare_dataset.py \
+  --config configs/train_A_only.yaml \
+  --hf_downloader hf_cli \
+  --hf_endpoint https://hf-mirror.com \
+  --hf_max_workers 8
+
+python scripts/02_prepare_dataset.py \
+  --config configs/train_ABC.yaml \
+  --hf_downloader hf_cli \
+  --hf_endpoint https://hf-mirror.com \
+  --hf_max_workers 8
+
+python scripts/02_prepare_dataset.py \
+  --config configs/eval_A_on_D.yaml \
+  --hf_downloader hf_cli \
+  --hf_endpoint https://hf-mirror.com \
+  --hf_max_workers 8
+```
+
+`configs/base_act.yaml` defaults to:
+
+```yaml
+hf_dataset_endpoint: https://hf-mirror.com
+hf_dataset_downloader: hf_cli
+hf_dataset_max_workers: 8
+hf_dataset_max_retries: 30
+hf_dataset_retry_sleep: 10.0
+```
+
+If `hf` is unavailable or recursively listing a large dataset hangs on the host, use Option A.
+
+## Manifest Preparation
+
+After raw split download, create processed manifests:
 
 ```bash
 python scripts/02_prepare_dataset.py --config configs/train_A_only.yaml

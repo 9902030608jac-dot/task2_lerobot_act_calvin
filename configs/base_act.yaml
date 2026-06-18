@@ -10,7 +10,7 @@ hf_dataset_downloader: hf_cli
 hf_cli_executable: hf
 hub_pub_executable: hub-pub
 hub_pub_command_template: null
-hf_dataset_max_workers: 1
+hf_dataset_max_workers: 8
 hf_dataset_max_retries: 30
 hf_dataset_retry_sleep: 10.0
 hf_dataset_etag_timeout: 300.0
