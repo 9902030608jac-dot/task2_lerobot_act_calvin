@@ -32,10 +32,10 @@ weight_decay: 0.00001
 optimizer: adamw
 loss_function: action_l1
 gradient_clip_norm: 1.0
-num_train_steps: 50000
+num_train_steps: 10000
 log_interval: 100
-save_interval: 5000
-eval_interval: 5000
+save_interval: 1000
+eval_interval: 1000
 validation_split: 0.1
 max_val_batches: 20
 

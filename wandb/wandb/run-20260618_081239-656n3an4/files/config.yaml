@@ -1,0 +1,166 @@
+_wandb:
+    value:
+        cli_version: 0.24.0
+        e:
+            dapr9oqzvzu37v7ko87ju2sux9yuqsxy:
+                args:
+                    - --config
+                    - configs/train_ABC.yaml
+                    - --device
+                    - cuda
+                    - --override
+                    - seed=44
+                    - run_name=act_ABC_seed44
+                    - output_dir=outputs/train/act_ABC_seed44
+                codePath: scripts/03_train_act.py
+                codePathLocal: scripts/03_train_act.py
+                email: 9902030608jac@gmail.com
+                executable: /opt/miniconda/envs/lerobot-act-calvin/bin/python
+                git:
+                    commit: 396d47722c434116bb6fa677fc4eeac46a1f19a4
+                    remote: https://github.com/9902030608jac-dot/task2_lerobot_act_calvin.git
+                host: gene-v100-i-0jlf7atzu52bvunrrecw-0
+                os: Linux-6.8.0-88-generic-x86_64-with-glibc2.35
+                program: /data/jacicon/task2_lerobot_act_calvin/scripts/03_train_act.py
+                python: CPython 3.12.13
+                root: /data/jacicon/task2_lerobot_act_calvin/wandb
+                startedAt: "2026-06-18T08:12:39.201794Z"
+                writerId: dapr9oqzvzu37v7ko87ju2sux9yuqsxy
+        m: []
+        python_version: 3.12.13
+        t:
+            "1":
+                - 1
+                - 41
+                - 49
+                - 51
+                - 71
+                - 83
+            "2":
+                - 1
+                - 41
+                - 49
+                - 51
+                - 71
+                - 83
+            "3":
+                - 13
+                - 16
+            "4": 3.12.13
+            "5": 0.24.0
+            "10":
+                - 20
+            "12": 0.24.0
+            "13": linux-x86_64
+action_key:
+    value: action
+batch_size:
+    value: 128
+chunk_size:
+    value: 100
+dataset_adapter:
+    value: calvin_v21_parquet
+dataset_cache_size:
+    value: 32
+dataset_path:
+    value: data/processed/calvin_ABC_lerobot
+device:
+    value: cuda
+eval_interval:
+    value: 5000
+gradient_clip_norm:
+    value: 1
+hf_cli_executable:
+    value: hf
+hf_dataset_download_timeout:
+    value: 300
+hf_dataset_downloader:
+    value: hf_cli
+hf_dataset_endpoint:
+    value: https://hf-mirror.com
+hf_dataset_etag_timeout:
+    value: 300
+hf_dataset_local_dir:
+    value: data/raw/xiaoma26_calvin_lerobot
+hf_dataset_max_retries:
+    value: 30
+hf_dataset_max_workers:
+    value: 8
+hf_dataset_repo:
+    value: xiaoma26/calvin-lerobot
+hf_dataset_retry_sleep:
+    value: 10
+hf_dataset_revision:
+    value: main
+hf_dataset_subdirs:
+    value:
+        - splitA
+        - splitB
+        - splitC
+hub_pub_command_template:
+    value: null
+hub_pub_executable:
+    value: hub-pub
+image_keys:
+    value:
+        - observation.images.rgb_static
+        - observation.images.rgb_gripper
+learning_rate:
+    value: 0.0001
+log_interval:
+    value: 100
+loss_function:
+    value: action_l1
+max_eval_episodes:
+    value: 100
+max_train_episodes_per_split:
+    value: null
+max_val_batches:
+    value: 20
+network_architecture:
+    value: lerobot_act_default
+num_train_steps:
+    value: 50000
+num_workers:
+    value: 8
+offline_eval_only:
+    value: true
+optimizer:
+    value: adamw
+output_dir:
+    value: outputs/train/act_ABC_seed44
+persistent_workers:
+    value: true
+policy_type:
+    value: act
+prefetch_factor:
+    value: 4
+pretrained_backbone_weights:
+    value: null
+project_name:
+    value: task2_lerobot_act_calvin
+run_name:
+    value: act_ABC_seed44
+save_interval:
+    value: 5000
+seed:
+    value: 44
+state_key:
+    value: observation.state
+task_key:
+    value: task
+temporal_ensemble:
+    value: true
+train_envs:
+    value:
+        - A
+        - B
+        - C
+use_swanlab:
+    value: false
+use_wandb:
+    value: true
+validation_split:
+    value: 0.1
+weight_decay:
+    value: 1e-05

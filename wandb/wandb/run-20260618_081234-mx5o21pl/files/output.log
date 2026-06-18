@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/data/jacicon/task2_lerobot_act_calvin/scripts/03_train_act.py", line 51, in <module>
+    main()
+  File "/data/jacicon/task2_lerobot_act_calvin/scripts/03_train_act.py", line 42, in main
+    result = train_act(config)
+             ^^^^^^^^^^^^^^^^^
+  File "/data/jacicon/task2_lerobot_act_calvin/src/train_utils.py", line 413, in train_act
+    dataset = load_training_dataset(config, torch, lerobot_api)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/jacicon/task2_lerobot_act_calvin/src/train_utils.py", line 173, in load_training_dataset
+    return CalvinLeRobotDataset(dataset_dir, chunk_size=int(config["chunk_size"]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/jacicon/task2_lerobot_act_calvin/src/lerobot_bridge.py", line 44, in __init__
+    raise FileNotFoundError(f"Missing sample index: {self.index_path}")
+FileNotFoundError: Missing sample index: /data/jacicon/task2_lerobot_act_calvin/data/processed/calvin_ABC_lerobot/sample_index.jsonl

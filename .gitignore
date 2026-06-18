@@ -1,8 +1,6 @@
-data/raw/
-outputs/
-logs/
+data/
 checkpoints/
-wandb/
+predictions.jsonl
 __pycache__/
 *.pyc
 .DS_Store

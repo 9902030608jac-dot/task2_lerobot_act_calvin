@@ -1,0 +1,3 @@
+model,episode_l1_mean_across_seeds,episode_l1_mean_std_across_seeds,episode_l1_median_across_seeds,episode_l1_p90_across_seeds,completed_seeds
+act_ABC,0.22639191045008317,0.0014030443140431333,0.23122324672105726,0.31823878615638107,4
+act_A_only,0.24715944932378464,0.0026126712402449,0.250403299397574,0.3256384031252817,4

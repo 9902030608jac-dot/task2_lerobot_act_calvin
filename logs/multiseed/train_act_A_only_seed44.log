@@ -1,0 +1,187 @@
+nohup: ignoring input
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /root/.netrc.
+wandb: Currently logged in as: 9902030608jac (9902030608jac-fudan) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: setting up run bsy42xwe
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /data/jacicon/task2_lerobot_act_calvin/wandb/wandb/run-20260618_094641-bsy42xwe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run act_A_only_seed44
+wandb: ⭐️ View project at https://wandb.ai/9902030608jac-fudan/task2_lerobot_act_calvin
+wandb: 🚀 View run at https://wandb.ai/9902030608jac-fudan/task2_lerobot_act_calvin/runs/bsy42xwe
+WARNING:lerobot.configs.policies:Device 'None' is not available. Switching to 'cuda'.
+{
+  "status": "starting_training",
+  "config_snapshot": "/data/jacicon/task2_lerobot_act_calvin/outputs/train/act_A_only_seed44/config_snapshot.yaml",
+  "run_name": "act_A_only_seed44",
+  "policy_type": "act",
+  "train_envs": [
+    "A"
+  ],
+  "dataset_path": "data/processed/calvin_A_lerobot",
+  "output_dir": "outputs/train/act_A_only_seed44",
+  "batch_size": 128,
+  "learning_rate": 0.0001,
+  "weight_decay": 1e-05,
+  "optimizer": "adamw",
+  "loss_function": "action_l1",
+  "num_train_steps": 10000,
+  "validation_split": 0.1,
+  "max_val_batches": 20,
+  "chunk_size": 100,
+  "temporal_ensemble": true
+}
+{"step": 1, "train_action_l1_loss": 0.21853107213974, "total_loss": 77.42414093017578, "val_action_l1_loss": 0.5199058338999748, "val_total_loss": 52.519948196411136, "learning_rate": 0.0001, "time_per_step": 1.5567278780508786}
+{"step": 100, "train_action_l1_loss": 0.06529275327920914, "total_loss": 1.366247534751892, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.16995330806821585}
+{"step": 200, "train_action_l1_loss": 0.0846555083990097, "total_loss": 0.7858052253723145, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20906462683342397}
+{"step": 300, "train_action_l1_loss": 0.06966277956962585, "total_loss": 0.45749378204345703, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.202388257952407}
+{"step": 400, "train_action_l1_loss": 0.07323507219552994, "total_loss": 0.33101126551628113, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19915442285127938}
+{"step": 500, "train_action_l1_loss": 0.06745002418756485, "total_loss": 0.22762376070022583, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19876619009301066}
+{"step": 600, "train_action_l1_loss": 0.07161042094230652, "total_loss": 0.19875496625900269, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20258666202425957}
+{"step": 700, "train_action_l1_loss": 0.06260721385478973, "total_loss": 0.17437051236629486, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19252054300159216}
+{"step": 800, "train_action_l1_loss": 0.06858272850513458, "total_loss": 0.1786896288394928, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2100291179958731}
+{"step": 900, "train_action_l1_loss": 0.05586753785610199, "total_loss": 0.13329105079174042, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19666405790485442}
+{"step": 1000, "train_action_l1_loss": 0.0510229654610157, "total_loss": 0.1184585690498352, "val_action_l1_loss": 0.06042699608951807, "val_total_loss": 0.12551555074751378, "learning_rate": 0.0001, "time_per_step": 0.2087505969684571}
+{"step": 1100, "train_action_l1_loss": 0.056019145995378494, "total_loss": 0.1320197731256485, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.1973979021422565}
+{"step": 1200, "train_action_l1_loss": 0.05789337679743767, "total_loss": 0.12688355147838593, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20258804014883935}
+{"step": 1300, "train_action_l1_loss": 0.061414141207933426, "total_loss": 0.11087369918823242, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.21344941016286612}
+{"step": 1400, "train_action_l1_loss": 0.05107952654361725, "total_loss": 0.09943421185016632, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19469192787073553}
+{"step": 1500, "train_action_l1_loss": 0.055479779839515686, "total_loss": 0.09837367385625839, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20207816106267273}
+{"step": 1600, "train_action_l1_loss": 0.05931739881634712, "total_loss": 0.09758251905441284, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2117732830811292}
+{"step": 1700, "train_action_l1_loss": 0.05035191774368286, "total_loss": 0.09485608339309692, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20425510499626398}
+{"step": 1800, "train_action_l1_loss": 0.05205072462558746, "total_loss": 0.08601153641939163, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2069758779834956}
+{"step": 1900, "train_action_l1_loss": 0.05645889788866043, "total_loss": 0.09314186125993729, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20238191215321422}
+{"step": 2000, "train_action_l1_loss": 0.05026334524154663, "total_loss": 0.07755710184574127, "val_action_l1_loss": 0.054114085622131824, "val_total_loss": 0.08243688978254796, "learning_rate": 0.0001, "time_per_step": 0.1935085030272603}
+{"step": 2100, "train_action_l1_loss": 0.05018048733472824, "total_loss": 0.07888968288898468, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19774501281790435}
+{"step": 2200, "train_action_l1_loss": 0.05472025275230408, "total_loss": 0.08489172160625458, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19749594014137983}
+{"step": 2300, "train_action_l1_loss": 0.0575094036757946, "total_loss": 0.07561582326889038, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20087969582527876}
+{"step": 2400, "train_action_l1_loss": 0.053545139729976654, "total_loss": 0.0787542462348938, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19970352295786142}
+{"step": 2500, "train_action_l1_loss": 0.04993463680148125, "total_loss": 0.07870478928089142, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19859187700785697}
+{"step": 2600, "train_action_l1_loss": 0.05217302590608597, "total_loss": 0.06728628277778625, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20388466794975102}
+{"step": 2700, "train_action_l1_loss": 0.048818327486515045, "total_loss": 0.07796715945005417, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20552967209368944}
+{"step": 2800, "train_action_l1_loss": 0.04142674803733826, "total_loss": 0.05649576708674431, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.1984569588676095}
+{"step": 2900, "train_action_l1_loss": 0.0518658272922039, "total_loss": 0.06938536465167999, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2095557921566069}
+{"step": 3000, "train_action_l1_loss": 0.05347410589456558, "total_loss": 0.06880567967891693, "val_action_l1_loss": 0.04776570238173008, "val_total_loss": 0.05959856417030096, "learning_rate": 0.0001, "time_per_step": 0.20186654897406697}
+{"step": 3100, "train_action_l1_loss": 0.0495295450091362, "total_loss": 0.06147520989179611, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.21657896600663662}
+{"step": 3200, "train_action_l1_loss": 0.04072985053062439, "total_loss": 0.05378174036741257, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.21404857095330954}
+{"step": 3300, "train_action_l1_loss": 0.04612205550074577, "total_loss": 0.05419647693634033, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20402962109073997}
+{"step": 3400, "train_action_l1_loss": 0.042014144361019135, "total_loss": 0.05230988562107086, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20114689809270203}
+{"step": 3500, "train_action_l1_loss": 0.04707910865545273, "total_loss": 0.0606706365942955, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2002693321555853}
+{"step": 3600, "train_action_l1_loss": 0.044622186571359634, "total_loss": 0.057137444615364075, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20234402315691113}
+{"step": 3700, "train_action_l1_loss": 0.04673932120203972, "total_loss": 0.05796583741903305, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20646131015382707}
+{"step": 3800, "train_action_l1_loss": 0.046419404447078705, "total_loss": 0.06365426629781723, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.200628463877365}
+{"step": 3900, "train_action_l1_loss": 0.0466446578502655, "total_loss": 0.054548509418964386, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19753749598748982}
+{"step": 4000, "train_action_l1_loss": 0.04119650274515152, "total_loss": 0.04765886813402176, "val_action_l1_loss": 0.042535779625177385, "val_total_loss": 0.04916024636477232, "learning_rate": 0.0001, "time_per_step": 0.19875009590759873}
+{"step": 4100, "train_action_l1_loss": 0.03806120902299881, "total_loss": 0.04683419317007065, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19820310594514012}
+{"step": 4200, "train_action_l1_loss": 0.043193355202674866, "total_loss": 0.04992058128118515, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20715204696170986}
+{"step": 4300, "train_action_l1_loss": 0.0422838032245636, "total_loss": 0.04776448756456375, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20201818994246423}
+{"step": 4400, "train_action_l1_loss": 0.043257325887680054, "total_loss": 0.051461491733789444, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2049310051370412}
+{"step": 4500, "train_action_l1_loss": 0.03869735822081566, "total_loss": 0.046749889850616455, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19987652101553977}
+{"step": 4600, "train_action_l1_loss": 0.03767603263258934, "total_loss": 0.05132428556680679, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19743229798041284}
+{"step": 4700, "train_action_l1_loss": 0.040951307862997055, "total_loss": 0.05072702839970589, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2192987350281328}
+{"step": 4800, "train_action_l1_loss": 0.03482348099350929, "total_loss": 0.04359875246882439, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20103504601866007}
+{"step": 4900, "train_action_l1_loss": 0.04146163538098335, "total_loss": 0.04956115037202835, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19761508493684232}
+{"step": 5000, "train_action_l1_loss": 0.03791027143597603, "total_loss": 0.04523288458585739, "val_action_l1_loss": 0.039231257140636445, "val_total_loss": 0.0456171378493309, "learning_rate": 0.0001, "time_per_step": 0.20020960201509297}
+{"step": 5100, "train_action_l1_loss": 0.04050524905323982, "total_loss": 0.045677170157432556, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19690408697351813}
+{"step": 5200, "train_action_l1_loss": 0.03632152080535889, "total_loss": 0.042588282376527786, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2010014750994742}
+{"step": 5300, "train_action_l1_loss": 0.034571316093206406, "total_loss": 0.040161773562431335, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20512493094429374}
+{"step": 5400, "train_action_l1_loss": 0.0359002910554409, "total_loss": 0.04339056834578514, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.247832837048918}
+{"step": 5500, "train_action_l1_loss": 0.04113542288541794, "total_loss": 0.04709384962916374, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.21343907597474754}
+{"step": 5600, "train_action_l1_loss": 0.03441939502954483, "total_loss": 0.03843415528535843, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20383111597038805}
+{"step": 5700, "train_action_l1_loss": 0.033682722598314285, "total_loss": 0.037066295742988586, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20561089017428458}
+{"step": 5800, "train_action_l1_loss": 0.03100595250725746, "total_loss": 0.036778710782527924, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20533983898349106}
+{"step": 5900, "train_action_l1_loss": 0.031933777034282684, "total_loss": 0.035636283457279205, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19456180511042476}
+{"step": 6000, "train_action_l1_loss": 0.030535293743014336, "total_loss": 0.03713778033852577, "val_action_l1_loss": 0.03659550584852696, "val_total_loss": 0.041263227351009846, "learning_rate": 0.0001, "time_per_step": 0.20262139290571213}
+{"step": 6100, "train_action_l1_loss": 0.037913836538791656, "total_loss": 0.04158317670226097, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20696882298216224}
+{"step": 6200, "train_action_l1_loss": 0.03196490556001663, "total_loss": 0.035858362913131714, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20330595411360264}
+{"step": 6300, "train_action_l1_loss": 0.03996169567108154, "total_loss": 0.04321686550974846, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19521604012697935}
+{"step": 6400, "train_action_l1_loss": 0.035453565418720245, "total_loss": 0.04303024709224701, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20802879496477544}
+{"step": 6500, "train_action_l1_loss": 0.03339450806379318, "total_loss": 0.03919694945216179, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19927059579640627}
+{"step": 6600, "train_action_l1_loss": 0.03286571800708771, "total_loss": 0.03583058342337608, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20124923205003142}
+{"step": 6700, "train_action_l1_loss": 0.03293115645647049, "total_loss": 0.037962622940540314, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2092484610620886}
+{"step": 6800, "train_action_l1_loss": 0.03196820244193077, "total_loss": 0.03586200624704361, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.21009873901493847}
+{"step": 6900, "train_action_l1_loss": 0.029067806899547577, "total_loss": 0.03311004117131233, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2052031890489161}
+{"step": 7000, "train_action_l1_loss": 0.03386635705828667, "total_loss": 0.03798246383666992, "val_action_l1_loss": 0.03336302749812603, "val_total_loss": 0.03808752167969942, "learning_rate": 0.0001, "time_per_step": 0.21980181289836764}
+{"step": 7100, "train_action_l1_loss": 0.034070372581481934, "total_loss": 0.04059372469782829, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20031801401637495}
+{"step": 7200, "train_action_l1_loss": 0.030853886157274246, "total_loss": 0.0332685150206089, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.21177861001342535}
+{"step": 7300, "train_action_l1_loss": 0.030995862558484077, "total_loss": 0.03766294941306114, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2024812651798129}
+{"step": 7400, "train_action_l1_loss": 0.031971804797649384, "total_loss": 0.035079263150691986, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19795309007167816}
+{"step": 7500, "train_action_l1_loss": 0.03372221812605858, "total_loss": 0.03804362565279007, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.201074562035501}
+{"step": 7600, "train_action_l1_loss": 0.0301904808729887, "total_loss": 0.03250131756067276, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.18672366812825203}
+{"step": 7700, "train_action_l1_loss": 0.0364135317504406, "total_loss": 0.038614969700574875, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20948788500390947}
+{"step": 7800, "train_action_l1_loss": 0.03268436715006828, "total_loss": 0.035050034523010254, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19796702405437827}
+{"step": 7900, "train_action_l1_loss": 0.03359241411089897, "total_loss": 0.03608967363834381, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19854803197085857}wandb: uploading artifact act_A_only_seed44_train_metrics; uploading artifact act_A_only_seed44_final_checkpoint; updating run metadata
+wandb: uploading artifact act_A_only_seed44_train_metrics; uploading artifact act_A_only_seed44_final_checkpoint; uploading output.log; uploading wandb-summary.json
+wandb: uploading artifact act_A_only_seed44_train_metrics; uploading artifact act_A_only_seed44_final_checkpoint; uploading config.yaml
+wandb: uploading artifact act_A_only_seed44_train_metrics; uploading artifact act_A_only_seed44_final_checkpoint
+wandb: uploading artifact act_A_only_seed44_final_checkpoint
+wandb: uploading artifact act_A_only_seed44_final_checkpoint; uploading history steps 9999-9999, summary
+wandb: uploading artifact act_A_only_seed44_final_checkpoint
+wandb: uploading artifact act_A_only_seed44_final_checkpoint; uploading data
+wandb: uploading artifact act_A_only_seed44_final_checkpoint
+wandb: uploading artifact act_A_only_seed44_final_checkpoint; uploading data
+wandb: uploading artifact act_A_only_seed44_final_checkpoint
+wandb: uploading artifact act_A_only_seed44_final_checkpoint; uploading data
+wandb: uploading artifact act_A_only_seed44_final_checkpoint
+wandb: uploading artifact act_A_only_seed44_final_checkpoint; uploading data
+wandb: uploading artifact act_A_only_seed44_final_checkpoint
+wandb: uploading artifact act_A_only_seed44_final_checkpoint; uploading data
+wandb: uploading artifact act_A_only_seed44_final_checkpoint
+wandb: uploading data
+wandb: 
+wandb: Run history:
+wandb:        train/learning_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        train/time_per_step █▃▄▂▆▄▇▄▅█▄▆▂▄▄▃▇▇▅▇▄▂█▁▄▇▅▃▂▃▄▃▄▃▃▂█▄▅▃
+wandb:           train/total_loss █▅▄▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: train/train_action_l1_loss █▇▆▆▇▆▆▆▆▆▇▆▇▅▇▅▃▄▃▃▄▄▃▃▄▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁
+wandb:         val/action_l1_loss █▁▁▁▁▁▁▁▁▁▁
+wandb:             val/total_loss █▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:        train/learning_rate 0.0001
+wandb:        train/time_per_step 0.20056
+wandb:           train/total_loss 0.03198
+wandb: train/train_action_l1_loss 0.03075
+wandb:         val/action_l1_loss 0.03012
+wandb:             val/total_loss 0.03172
+wandb: 
+wandb: 🚀 View run act_A_only_seed44 at: https://wandb.ai/9902030608jac-fudan/task2_lerobot_act_calvin/runs/bsy42xwe
+wandb: ⭐️ View project at: https://wandb.ai/9902030608jac-fudan/task2_lerobot_act_calvin
+wandb: Synced 5 W&B file(s), 0 media file(s), 4 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/wandb/run-20260618_094641-bsy42xwe/logs
+
+{"step": 8000, "train_action_l1_loss": 0.03228510543704033, "total_loss": 0.03355465084314346, "val_action_l1_loss": 0.0319972038269043, "val_total_loss": 0.03685815203934908, "learning_rate": 0.0001, "time_per_step": 0.2052120070438832}
+{"step": 8100, "train_action_l1_loss": 0.031156299635767937, "total_loss": 0.03345530852675438, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20175626105628908}
+{"step": 8200, "train_action_l1_loss": 0.032614659518003464, "total_loss": 0.035325899720191956, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20353761711157858}
+{"step": 8300, "train_action_l1_loss": 0.029370339587330818, "total_loss": 0.03256465867161751, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19214451708830893}
+{"step": 8400, "train_action_l1_loss": 0.03067544661462307, "total_loss": 0.033272530883550644, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20634368201717734}
+{"step": 8500, "train_action_l1_loss": 0.02916884236037731, "total_loss": 0.031069139018654823, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19786492409184575}
+{"step": 8600, "train_action_l1_loss": 0.03236653283238411, "total_loss": 0.033313363790512085, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19745010696351528}
+{"step": 8700, "train_action_l1_loss": 0.030333656817674637, "total_loss": 0.03298783674836159, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.1998555741738528}
+{"step": 8800, "train_action_l1_loss": 0.03274582326412201, "total_loss": 0.03407501056790352, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.18170658103190362}
+{"step": 8900, "train_action_l1_loss": 0.02817309834063053, "total_loss": 0.03022022172808647, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20318884099833667}
+{"step": 9000, "train_action_l1_loss": 0.02770981378853321, "total_loss": 0.02934037148952484, "val_action_l1_loss": 0.03157961722463369, "val_total_loss": 0.0329053639434278, "learning_rate": 0.0001, "time_per_step": 0.21316103800199926}
+{"step": 9100, "train_action_l1_loss": 0.03184607997536659, "total_loss": 0.03316586837172508, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19788618409074843}
+{"step": 9200, "train_action_l1_loss": 0.028405724093317986, "total_loss": 0.02989540994167328, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20396744087338448}
+{"step": 9300, "train_action_l1_loss": 0.025695325806736946, "total_loss": 0.028270835056900978, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20022594393230975}
+{"step": 9400, "train_action_l1_loss": 0.029174674302339554, "total_loss": 0.030852684751152992, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19847693294286728}
+{"step": 9500, "train_action_l1_loss": 0.030094411224126816, "total_loss": 0.03202398121356964, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19960507401265204}
+{"step": 9600, "train_action_l1_loss": 0.029345577582716942, "total_loss": 0.03326011821627617, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2059471958782524}
+{"step": 9700, "train_action_l1_loss": 0.029623979702591896, "total_loss": 0.031399376690387726, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20348482998088002}
+{"step": 9800, "train_action_l1_loss": 0.029756728559732437, "total_loss": 0.03204724192619324, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20685915183275938}
+{"step": 9900, "train_action_l1_loss": 0.02874172106385231, "total_loss": 0.02979455515742302, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.2040869549382478}
+{"step": 10000, "train_action_l1_loss": 0.030751928687095642, "total_loss": 0.03197511285543442, "val_action_l1_loss": 0.030116692837327718, "val_total_loss": 0.031716832611709836, "learning_rate": 0.0001, "time_per_step": 0.20055937115103006}
+{
+  "status": "ok",
+  "run_name": "act_A_only_seed44",
+  "num_train_steps": 10000,
+  "metrics_path": "/data/jacicon/task2_lerobot_act_calvin/outputs/train/act_A_only_seed44/train_metrics.csv",
+  "last_periodic_checkpoint": "/data/jacicon/task2_lerobot_act_calvin/outputs/train/act_A_only_seed44/checkpoints/step_010000",
+  "final_checkpoint": "/data/jacicon/task2_lerobot_act_calvin/outputs/train/act_A_only_seed44/checkpoints/final",
+  "device": "cuda",
+  "dataset_size": 366693,
+  "train_dataset_size": 330024,
+  "val_dataset_size": 36669,
+  "wandb_run_url": "https://wandb.ai/9902030608jac-fudan/task2_lerobot_act_calvin/runs/bsy42xwe",
+  "config_snapshot": "/data/jacicon/task2_lerobot_act_calvin/outputs/train/act_A_only_seed44/config_snapshot.yaml"
+}

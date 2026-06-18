@@ -1,0 +1,12 @@
+{"time":"2026-06-18T11:12:16.74120946Z","level":"INFO","msg":"stream: starting","core version":"0.24.0"}
+{"time":"2026-06-18T11:12:18.053376196Z","level":"INFO","msg":"stream: created new stream","id":"vaumkip0"}
+{"time":"2026-06-18T11:12:18.053456193Z","level":"INFO","msg":"handler: started","stream_id":"vaumkip0"}
+{"time":"2026-06-18T11:12:18.054258899Z","level":"INFO","msg":"stream: started","id":"vaumkip0"}
+{"time":"2026-06-18T11:12:18.054270398Z","level":"INFO","msg":"writer: started","stream_id":"vaumkip0"}
+{"time":"2026-06-18T11:12:18.054278371Z","level":"INFO","msg":"sender: started","stream_id":"vaumkip0"}
+{"time":"2026-06-18T11:18:18.387750665Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-06-18T11:18:18.960234933Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-06-18T11:18:18.966197288Z","level":"INFO","msg":"stream: closing","id":"vaumkip0"}
+{"time":"2026-06-18T11:18:18.966214435Z","level":"INFO","msg":"handler: closed","stream_id":"vaumkip0"}
+{"time":"2026-06-18T11:18:18.966297016Z","level":"INFO","msg":"sender: closed","stream_id":"vaumkip0"}
+{"time":"2026-06-18T11:18:18.966315377Z","level":"INFO","msg":"stream: closed","id":"vaumkip0"}

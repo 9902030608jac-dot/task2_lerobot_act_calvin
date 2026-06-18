@@ -1,0 +1,71 @@
+{
+  "os": "Linux-6.8.0-88-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.12.13",
+  "startedAt": "2026-06-18T08:16:14.012362Z",
+  "args": [
+    "--config",
+    "configs/train_ABC.yaml",
+    "--device",
+    "cuda",
+    "--override",
+    "seed=42",
+    "run_name=act_ABC_seed42",
+    "output_dir=outputs/train/act_ABC_seed42"
+  ],
+  "program": "/data/jacicon/task2_lerobot_act_calvin/scripts/03_train_act.py",
+  "codePath": "scripts/03_train_act.py",
+  "codePathLocal": "scripts/03_train_act.py",
+  "git": {
+    "remote": "https://github.com/9902030608jac-dot/task2_lerobot_act_calvin.git",
+    "commit": "396d47722c434116bb6fa677fc4eeac46a1f19a4"
+  },
+  "email": "9902030608jac@gmail.com",
+  "root": "/data/jacicon/task2_lerobot_act_calvin/wandb",
+  "host": "gene-v100-i-0jlf7atzu52bvunrrecw-0",
+  "executable": "/opt/miniconda/envs/lerobot-act-calvin/bin/python",
+  "cpu_count": 24,
+  "cpu_count_logical": 48,
+  "gpu": "Tesla V100-SXM2-32GB",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "210979442688",
+      "used": "149438304256"
+    }
+  },
+  "memory": {
+    "total": "388090130432"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta",
+      "uuid": "GPU-19143a54-da04-072f-00f7-e4f07f15c819"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta",
+      "uuid": "GPU-2d47cc0f-30d8-902d-6e0a-245b2bf9d360"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta",
+      "uuid": "GPU-e479a234-82ee-3f16-ad58-32cea362ae4f"
+    },
+    {
+      "name": "Tesla V100-SXM2-32GB",
+      "memoryTotal": "34359738368",
+      "cudaCores": 5120,
+      "architecture": "Volta",
+      "uuid": "GPU-a7943fc6-cdc5-fc39-4671-953c0f527357"
+    }
+  ],
+  "cudaVersion": "12.4",
+  "writerId": "ux38af2dccerlhpjhpwpqtngln7qzkj9"
+}

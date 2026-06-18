@@ -1,0 +1,6 @@
+WARNING:lerobot.configs.policies:Device 'None' is not available. Switching to 'cuda'.
+{"step": 1, "train_action_l1_loss": 0.20124498009681702, "total_loss": 61.29243850708008, "val_action_l1_loss": 0.6250117540359497, "val_total_loss": 61.233618927001956, "learning_rate": 0.0001, "time_per_step": 2.64152222010307}
+{"step": 100, "train_action_l1_loss": 0.08078551292419434, "total_loss": 1.3092275857925415, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.18049290007911623}
+{"step": 200, "train_action_l1_loss": 0.07079054415225983, "total_loss": 0.6721979379653931, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.21799641195684671}
+{"step": 300, "train_action_l1_loss": 0.06721686571836472, "total_loss": 0.4221961498260498, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.20746457879431546}
+{"step": 400, "train_action_l1_loss": 0.07091815769672394, "total_loss": 0.27761560678482056, "val_action_l1_loss": "", "val_total_loss": "", "learning_rate": 0.0001, "time_per_step": 0.19562605884857476}

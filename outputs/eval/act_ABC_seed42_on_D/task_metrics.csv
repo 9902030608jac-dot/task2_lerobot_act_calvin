@@ -1,0 +1,390 @@
+env_id,task_index,task,num_samples,action_l1_loss
+D,0,move_slider_left: move the door to the left side,975,0.2674326077944193
+D,1,move_slider_left: slide the door to the left side,534,0.2682970387770442
+D,2,turn_off_lightbulb: slide down the switch,845,0.18694589658249058
+D,3,turn_on_led: toggle the button to turn on the green light,613,0.24582623015803576
+D,4,turn_on_lightbulb: toggle the light switch to turn on the yellow light,650,0.21802376242211233
+D,5,turn_on_lightbulb: push the switch upwards,938,0.17021480019984722
+D,6,turn_on_led: push down the button to turn on the led,431,0.2722870042837136
+D,7,open_drawer: open the cabinet drawer,1040,0.2291693221312016
+D,8,open_drawer: grasp the drawer handle and open it,1040,0.17935654006611843
+D,9,turn_on_lightbulb: move up the switch,845,0.1888751604059744
+D,10,open_drawer: pull the handle of the drawer,910,0.19159444600016207
+D,11,move_slider_left: move the sliding door to the left,650,0.26863866365872896
+D,12,place_in_drawer: put the block in the drawer,377,0.2731053930378719
+D,13,turn_off_lightbulb: toggle the light switch to turn off the light bulb,807,0.2283039555932214
+D,14,move_slider_right: move the door to the right side,520,0.26698910876248894
+D,15,turn_on_lightbulb: turn on the yellow light,975,0.18302708325095665
+D,16,lift_blue_block_table: grasp the blue block and lift it up,1106,0.21217379119469504
+D,17,turn_off_led: toggle the button to turn off the led light,949,0.22400541417104428
+D,18,push_into_drawer: sweep the block into the drawer,1197,0.2535727814543267
+D,19,move_slider_right: push the sliding door to the right,1040,0.23726876019858398
+D,20,rotate_red_block_left: take the red block and rotate it left,1170,0.2568397947228872
+D,21,close_drawer: close the cabinet drawer,1142,0.16995028080500257
+D,22,lift_red_block_drawer: grasp the red block from the drawer,973,0.21327307553845098
+D,23,unstack_block: remove the top block,926,0.20037543559225665
+D,24,turn_off_lightbulb: turn off the yellow lamp,1088,0.23517550731433884
+D,25,lift_red_block_slider: pick up the red block in the sliding cabinet,650,0.17548953148034901
+D,26,lift_red_block_slider: grasp the red block lying in the cabinet,894,0.18949770852840053
+D,27,close_drawer: push the handle of the drawer,1192,0.19238624490497497
+D,28,move_slider_right: slide the door to the right,780,0.21640014018003756
+D,29,turn_on_lightbulb: move the light switch to turn on the yellow light,1024,0.21280984493205324
+D,30,lift_red_block_table: pick up the red block from the table,1057,0.22033140302944995
+D,31,rotate_pink_block_right: rotate the pink block 90 degrees to the right,1074,0.28066206844159347
+D,32,lift_blue_block_table: lift the blue block,875,0.19888844658647264
+D,33,close_drawer: grasp the drawer handle and close it,1040,0.15402494288013818
+D,34,rotate_pink_block_left: take the pink block and turn it left,1235,0.27532539481093526
+D,35,turn_on_led: toggle the button to turn on the led light,749,0.2391183083014033
+D,36,lift_red_block_slider: grasp the red block lying in the slider,455,0.17185274356014127
+D,37,"rotate_pink_block_left: grasp the pink block, then rotate it left",1040,0.2827691936149047
+D,38,unstack_block: take off the block that is on top of the other one,1628,0.22141588917482616
+D,39,lift_pink_block_slider: pick up the pink block from the shelf,455,0.17865597282300938
+D,40,turn_on_led: push down the button to turn on the green light,748,0.2368619501401476
+D,41,lift_pink_block_table: lift the pink block,1317,0.24858695595619257
+D,42,unstack_block: take off the stacked block,762,0.21699267614564402
+D,43,rotate_pink_block_right: take the pink block and turn it right,791,0.2736621401478759
+D,44,turn_on_lightbulb: slide up the switch,585,0.17366324766324118
+D,45,lift_blue_block_table: lift the blue block from the table,920,0.2025883029093561
+D,46,open_drawer: go open the drawer,845,0.20391731540832295
+D,47,move_slider_left: move the door to the left,520,0.2547719357535243
+D,48,turn_on_led: turn on the led light,1088,0.20917086361099363
+D,49,lift_red_block_drawer: lift the red block in the drawer,845,0.22164474305140197
+D,50,place_in_drawer: store the grasped object in the drawer,457,0.27975506832745717
+D,51,turn_on_led: turn on the led,417,0.2423373644800781
+D,52,place_in_slider: put the block in the cabinet,407,0.2958225990835513
+D,53,turn_off_led: toggle the button to turn off the led,627,0.25458537234049855
+D,54,turn_off_led: toggle the button to turn off the green light,710,0.23447623334457757
+D,55,unstack_block: go to the tower of blocks and take off the top one,1283,0.20712231304017437
+D,56,"close_drawer: grasp the handle of the drawer, then close it",1300,0.16319734513902892
+D,57,turn_off_lightbulb: turn off the light bulb,1300,0.2152131622714492
+D,58,place_in_slider: put the grasped object in the cabinet,418,0.265636724932342
+D,59,lift_blue_block_slider: pick up the blue block from the sliding cabinet,628,0.1815842416161185
+D,60,rotate_pink_block_left: grasp the pink block and rotate it left,1040,0.2797415132276141
+D,61,"rotate_pink_block_right: grasp the pink block, then rotate it right",1087,0.2546852114640361
+D,62,lift_red_block_slider: lift the red block lying in the cabinet,455,0.1873506317263121
+D,63,push_into_drawer: sweep the object into the drawer,1143,0.2548522249333502
+D,64,turn_on_led: turn on the led lamp,919,0.2505150925493733
+D,65,unstack_block: remove a block from the stack,1174,0.18613316353531062
+D,66,lift_pink_block_drawer: grasp the pink block lying in the drawer,1254,0.22249411738684113
+D,67,place_in_slider: place the object in the cabinet,564,0.27206606782497245
+D,68,place_in_drawer: store the object in the drawer,504,0.25788402773203356
+D,69,lift_red_block_slider: in the cabinet grasp the red block,455,0.1817474766091986
+D,70,place_in_drawer: move to the drawer and place the object,337,0.28069340510608887
+D,71,push_into_drawer: push the object into the drawer,1657,0.24046836998234977
+D,72,"open_drawer: grasp the handle of the drawer, then open it",1365,0.24740215459422313
+D,73,move_slider_right: move the sliding door to the right,520,0.2603995417889494
+D,74,turn_off_led: push down the button to turn off the led,236,0.21259893379095246
+D,75,lift_blue_block_slider: lift the blue block on the shelf,880,0.17221180253916166
+D,76,rotate_red_block_right: take the red block and rotate it right,685,0.2576057308564221
+D,77,move_slider_left: move the door all the way to the left,390,0.23507785136118914
+D,78,lift_blue_block_drawer: grasp the blue block in the drawer,1152,0.2190608117574205
+D,79,stack_block: place the block on top of another block,770,0.2588018511216362
+D,80,"lift_red_block_table: grasp the red block, then lift it up",826,0.20405926542767025
+D,81,open_drawer: pull the drawer,1365,0.21522970818829187
+D,82,rotate_pink_block_left: rotate the pink block towards the left,975,0.2980682387565955
+D,83,place_in_slider: place the grasped object in the sliding cabinet,652,0.2721241750051639
+D,84,place_in_drawer: put the object in the drawer,291,0.30865831765317425
+D,85,place_in_slider: place the block in the cabinet,454,0.3024274493497899
+D,86,"close_drawer: grasp the drawer handle, then close it",861,0.2410516306913688
+D,87,lift_blue_block_table: pick up the blue block on the table,1486,0.2051382388851905
+D,88,lift_pink_block_drawer: go towards the pink block in the drawer and lift it,715,0.23081111284819517
+D,89,move_slider_right: slide the door all the way to the right,650,0.2269943631039216
+D,90,lift_pink_block_drawer: go towards the pink block in the drawer and pick it up,585,0.21877969539063608
+D,91,lift_pink_block_slider: in the slider grasp the pink block,864,0.18868532280127207
+D,92,turn_on_lightbulb: turn on the light bulb,1019,0.20520727217957832
+D,93,lift_blue_block_slider: grasp the blue block lying in the cabinet,946,0.1622715080688544
+D,94,place_in_slider: place the grasped object in the slider,444,0.2833013686913628
+D,95,lift_pink_block_drawer: grasp the pink block from the drawer,845,0.1985004149068742
+D,96,move_slider_right: push the door to the right side,520,0.26366797315959745
+D,97,lift_red_block_drawer: grasp the red block lying in the drawer,585,0.21692446663848355
+D,98,"move_slider_right: slide the door to the right, then let it go",715,0.23684437706337108
+D,99,push_pink_block_left: push left the pink block,1062,0.18348595374062124
+D,100,lift_red_block_drawer: pick up the red block lying in the drawer,1054,0.2143877128128535
+D,101,rotate_red_block_left: rotate the red block to the left,1365,0.2583807840888753
+D,102,close_drawer: close the drawer,883,0.17021355937031496
+D,103,move_slider_right: grasp the door handle and slide the door to the right,845,0.23369759064189782
+D,104,lift_red_block_table: lift the red block,740,0.2113131214436647
+D,105,lift_red_block_table: pick up the red block,1315,0.22615247327451923
+D,106,rotate_blue_block_left: rotate the blue block to the left,650,0.2515206217307311
+D,107,"lift_blue_block_table: grasp the blue block on the table, then lift it up",650,0.19547912244613355
+D,108,close_drawer: grasp the handle of the drawer and close it,650,0.1019199693776094
+D,109,turn_off_led: turn off the green light,502,0.24613940240852386
+D,110,open_drawer: open the drawer,910,0.21714450738669097
+D,111,place_in_slider: place the object in the sliding cabinet,258,0.28093116672695145
+D,112,"move_slider_left: grasp the door handle, then move the door to the left",455,0.2284799106009714
+D,113,place_in_drawer: put the grasped object in the drawer,495,0.28834967769757663
+D,114,turn_on_led: push the button to turn on the green light,237,0.22892639499927875
+D,115,rotate_pink_block_right: rotate the pink block towards the right,715,0.2719924482849094
+D,116,place_in_drawer: go towards the drawer and store the object,345,0.22940310166365857
+D,117,"place_in_drawer: move to the drawer, then store the object",581,0.2769983086651656
+D,118,lift_pink_block_drawer: pick up the pink block in the drawer,749,0.2064288078505143
+D,119,turn_off_lightbulb: toggle the light switch to turn off the yellow light,1434,0.20818004072377538
+D,120,open_drawer: grasp the handle of the drawer and open it,1495,0.18289252516118978
+D,121,lift_pink_block_table: pick up the pink block,1203,0.2592305169624283
+D,122,turn_on_led: push down the button to turn on the led light,912,0.23188163457732452
+D,123,turn_on_lightbulb: turn on the yellow lamp,1318,0.18171612994126377
+D,124,turn_on_led: toggle the button to turn on the led,713,0.23361012365193554
+D,125,"move_slider_right: grasp the door handle, then move the door to the right",455,0.277621898660948
+D,126,push_red_block_left: go slide the red block to the left,1244,0.22774017243151976
+D,127,stack_block: stack the block on top of another block,970,0.25908243072401616
+D,128,turn_off_led: turn off the green lamp,485,0.23568524111484743
+D,129,move_slider_left: push the door to the left,880,0.27354579860852524
+D,130,lift_pink_block_table: pick up the pink block on the table,690,0.23511190891697786
+D,131,move_slider_left: slide the door all the way to the left,325,0.3084376743206611
+D,132,place_in_drawer: place the grasped object in the drawer,393,0.2682228573709347
+D,133,move_slider_right: move the door all the way to the right,585,0.2444378602772187
+D,134,lift_blue_block_drawer: grasp the blue block lying in the drawer,864,0.20396345090638432
+D,135,turn_off_led: push down the button to turn off the green light,853,0.25186105540670795
+D,136,close_drawer: push the drawer,1402,0.14670911756146185
+D,137,turn_off_lightbulb: push the switch downwards,1080,0.218050139983771
+D,138,close_drawer: go close the drawer,1170,0.1604828637921148
+D,139,move_slider_right: move the door all the way to the right and let go,390,0.16621949944931727
+D,140,lift_red_block_slider: lift the red block lying in the slider,520,0.19753050435907565
+D,141,place_in_slider: place the object in the slider,292,0.29851299708020196
+D,142,stack_block: put the grasped block on top of a block,1621,0.2627735506469714
+D,143,turn_off_lightbulb: move the light switch to turn off the yellow light,780,0.20379682088223022
+D,144,place_in_slider: place in slider,470,0.27154653313312127
+D,145,rotate_pink_block_left: rotate the pink block to the left,715,0.26468712626012053
+D,146,place_in_drawer: go towards the drawer and place the object,417,0.24664309024989461
+D,147,lift_blue_block_drawer: go towards the blue block in the drawer and grasp it,1105,0.21033076682376645
+D,148,"lift_blue_block_table: grasp the blue block, then lift it up",838,0.22211588204333776
+D,149,move_slider_left: move the door all the way to the left and let go,845,0.24822119500862777
+D,150,move_slider_left: grasp the door handle and move the door to the left,520,0.26296244951394887
+D,151,place_in_slider: place the block in the sliding cabinet,265,0.30730280533151805
+D,152,place_in_drawer: place the object in the drawer,540,0.31723454332462064
+D,153,move_slider_left: grasp the door handle and slide the door to the left,390,0.2550931616471364
+D,154,rotate_blue_block_right: take the blue block and rotate it right,678,0.26356034925905303
+D,155,lift_red_block_slider: pick up the red block from the sliding cabinet,758,0.19722718058404634
+D,156,lift_red_block_drawer: pick up the red block in the drawer,852,0.21411935736735663
+D,157,lift_blue_block_table: lift the blue block up,927,0.22655488622194997
+D,158,lift_blue_block_slider: lift the blue block lying in the slider,975,0.17230718818612586
+D,159,push_into_drawer: slide the object into the drawer,1776,0.24243558456844375
+D,160,push_red_block_left: slide left the red block,1095,0.22024587839501633
+D,161,unstack_block: collapse the stacked blocks,971,0.1981912289394102
+D,162,rotate_blue_block_right: rotate right the blue block,798,0.2744534520763801
+D,163,move_slider_right: slide the door to the right side,390,0.274454845335239
+D,164,lift_pink_block_slider: lift the pink block lying on the shelf,520,0.220895617068387
+D,165,lift_red_block_drawer: go towards the red block in the drawer and grasp it,640,0.2157977761584334
+D,166,lift_pink_block_slider: grasp the pink block lying on the shelf,780,0.19712251308254705
+D,167,place_in_slider: place the block in the slider,467,0.29308979529129614
+D,168,place_in_slider: put it in the slider,338,0.2539730418098749
+D,169,lift_blue_block_table: pick up the blue block from the table,758,0.22265912257233206
+D,170,move_slider_left: slide the door to the left,585,0.23706589167953557
+D,171,"lift_pink_block_table: grasp the pink block, then lift it up",603,0.2653077911604103
+D,172,turn_on_lightbulb: toggle the light switch to turn on the light bulb,893,0.16829889447481475
+D,173,push_blue_block_right: go push the blue block to the right,704,0.2185304503707977
+D,174,turn_on_led: push the button to turn on the led light,1027,0.2318018986476257
+D,175,push_pink_block_right: go slide the pink block to the right,1279,0.19739477725392257
+D,176,move_slider_right: move the door to the right,621,0.2256829711922029
+D,177,lift_red_block_slider: lift the red block lying in the sliding cabinet,455,0.1808666235798008
+D,178,rotate_blue_block_left: rotate the blue block 90 degrees to the left,780,0.26416335163208154
+D,179,rotate_pink_block_right: rotate right the pink block,1105,0.2798001069963248
+D,180,lift_red_block_slider: pick up the red block from the shelf,567,0.2039994810834343
+D,181,lift_red_block_table: pick up the red block on the table,886,0.2067894792356623
+D,182,lift_pink_block_slider: in the slider pick up the pink block,715,0.17922762511493442
+D,183,"lift_red_block_table: grasp the red block on the table, then lift it up",873,0.21283466096664486
+D,184,lift_blue_block_drawer: grasp the blue block from the drawer,650,0.21204761587656462
+D,185,turn_on_lightbulb: move the light switch to turn on the light bulb,1084,0.2149560274521913
+D,186,lift_red_block_table: lift the red block from the table,954,0.20801707715639528
+D,187,lift_blue_block_table: pick up the blue block,949,0.22256119221888554
+D,188,push_pink_block_left: push the pink block to the left,978,0.19403346075632577
+D,189,turn_off_led: turn off the led light,876,0.25602121512962667
+D,190,lift_blue_block_drawer: go towards the blue block in the drawer and pick it up,845,0.20919459616467798
+D,191,lift_pink_block_drawer: go towards the pink block in the drawer and grasp it,814,0.21284684667899217
+D,192,lift_blue_block_drawer: lift the blue block lying in the drawer,1142,0.20407870940329106
+D,193,lift_blue_block_slider: in the cabinet pick up the blue block,585,0.181886187590595
+D,194,place_in_drawer: place the block in the drawer,749,0.2896552856200846
+D,195,stack_block: stack blocks on top of each other,1018,0.2533401146765308
+D,196,rotate_red_block_right: rotate the red block to the right,1214,0.27308438184381123
+D,197,lift_pink_block_drawer: pick up the pink block lying in the drawer,691,0.23465320926197358
+D,198,place_in_slider: place the grasped object in the cabinet,276,0.30948398310853087
+D,199,rotate_pink_block_left: take the pink block and rotate it left,780,0.2815524460413517
+D,200,lift_pink_block_table: pick up the pink block from the table,869,0.24976507185072017
+D,201,lift_red_block_slider: in the cabinet pick up the red block,697,0.1777849739719412
+D,202,lift_red_block_drawer: go towards the red block in the drawer and pick it up,759,0.2296145531656871
+D,203,turn_off_led: push down the button to turn off the led light,481,0.268907887593934
+D,204,lift_blue_block_drawer: pick up the blue block lying in the drawer,889,0.19786288124101636
+D,205,push_pink_block_left: go slide the pink block to the left,1060,0.14120268092121718
+D,206,lift_pink_block_drawer: pick up the pink block from the drawer,1014,0.2368986143985914
+D,207,rotate_pink_block_right: take the pink block and rotate it right,1274,0.2620037356844783
+D,208,"lift_pink_block_table: grasp the pink block on the table, then lift it up",1066,0.21038718497132494
+D,209,rotate_blue_block_right: take the blue block and turn it right,1074,0.25530756865688764
+D,210,lift_pink_block_table: lift the pink block from the table,908,0.2628840493194201
+D,211,rotate_blue_block_left: grasp the blue block and rotate it left,948,0.268381384401759
+D,212,lift_pink_block_drawer: lift the pink block lying in the drawer,860,0.20937624234099722
+D,213,push_red_block_right: slide the red block towards the right,1105,0.2337181396714972
+D,214,lift_red_block_slider: lift the red block lying on the shelf,455,0.20622436256854088
+D,215,push_pink_block_left: sweep the pink block to the left,932,0.18423671151467402
+D,216,lift_red_block_slider: grasp the red block lying on the shelf,650,0.1636477476816911
+D,217,rotate_blue_block_right: rotate the blue block towards the right,910,0.26725648910134703
+D,218,"rotate_red_block_left: grasp the red block, then rotate it left",1284,0.26825627103169386
+D,219,lift_pink_block_slider: grasp the pink block lying in the sliding cabinet,650,0.19137587228646646
+D,220,lift_blue_block_slider: grasp the blue block lying in the sliding cabinet,390,0.16834218989198024
+D,221,lift_pink_block_table: grasp the pink block and lift it up,842,0.25825695271411303
+D,222,push_blue_block_left: push the blue block to the left,765,0.21452440664026082
+D,223,push_pink_block_left: slide the pink block towards the left,536,0.18750080641414693
+D,224,lift_red_block_drawer: pick up the red block from the drawer,1168,0.22413749513152528
+D,225,lift_red_block_table: grasp the red block and lift it up,1014,0.20303965127738505
+D,226,rotate_red_block_left: rotate left the red block,715,0.28021721819064
+D,227,lift_red_block_drawer: grasp the red block in the drawer,684,0.1906462482323772
+D,228,"rotate_red_block_left: grasp the red block, then turn it left",620,0.26507223260498813
+D,229,push_into_drawer: push the block into the drawer,1158,0.2550905002264985
+D,230,rotate_red_block_right: grasp the red block and turn it right,731,0.23626952139321822
+D,231,rotate_blue_block_left: take the blue block and rotate it left,732,0.2833015801883786
+D,232,lift_red_block_slider: grasp the red block lying in the sliding cabinet,455,0.1952418510566701
+D,233,rotate_red_block_right: turn the red block right,564,0.24657884828006546
+D,234,rotate_pink_block_left: turn the pink block left,585,0.28305573268578604
+D,235,push_into_drawer: push the object that it falls into the drawer,1255,0.24303063733941055
+D,236,push_blue_block_left: slide the blue block towards the left,850,0.22985367982703098
+D,237,lift_blue_block_slider: lift the blue block lying on the shelf,692,0.18017185311441478
+D,238,lift_pink_block_table: grasp the pink block on the table and lift it up,673,0.26112332746364386
+D,239,"rotate_pink_block_right: grasp the pink block, then turn it right",845,0.27077403570244296
+D,240,rotate_blue_block_left: grasp the blue block and turn it left,910,0.25496561526433453
+D,241,lift_pink_block_drawer: grasp the pink block in the drawer,1087,0.20716224568994526
+D,242,lift_blue_block_drawer: lift the blue block in the drawer,625,0.22848401000499724
+D,243,lift_pink_block_slider: lift the pink block on the shelf,720,0.21992788068536256
+D,244,rotate_pink_block_left: grasp the pink block and turn it left,1235,0.281225379040608
+D,245,stack_block: put the block on top of another block,851,0.2667851109412246
+D,246,lift_red_block_slider: in the slider grasp the red block,390,0.19368324423065553
+D,247,"rotate_pink_block_left: grasp the pink block, then turn it left",455,0.30333997983853894
+D,248,rotate_red_block_right: rotate the red block 90 degrees to the right,882,0.24911348034296177
+D,249,rotate_pink_block_right: turn the pink block right,455,0.3013092932137814
+D,250,push_blue_block_right: slide right the blue block,1074,0.2137961115747052
+D,251,rotate_pink_block_right: rotate the pink block to the right,585,0.25598658425176246
+D,252,lift_red_block_slider: lift the red block on the shelf,715,0.19270190470493756
+D,253,lift_pink_block_slider: pick up the pink block in the sliding cabinet,455,0.2087564290879847
+D,254,rotate_red_block_right: take the red block and turn it right,890,0.27279213250855383
+D,255,rotate_red_block_left: rotate the red block towards the left,780,0.25787199514989667
+D,256,lift_red_block_slider: in the slider pick up the red block,622,0.15329106955809993
+D,257,lift_blue_block_slider: lift the blue block lying in the sliding cabinet,780,0.19221060685813426
+D,258,rotate_blue_block_left: rotate the blue block towards the left,845,0.2629191333372917
+D,259,lift_blue_block_drawer: pick up the blue block from the drawer,650,0.20847020111404932
+D,260,rotate_red_block_left: grasp the red block and turn it left,845,0.2560485582556245
+D,261,rotate_blue_block_right: grasp the blue block and rotate it right,696,0.24688363216560463
+D,262,rotate_blue_block_right: grasp the blue block and turn it right,1040,0.23842502095235082
+D,263,rotate_blue_block_left: take the blue block and turn it left,910,0.25981681512279825
+D,264,lift_pink_block_slider: in the cabinet pick up the pink block,650,0.18451134972847424
+D,265,push_pink_block_right: go push the pink block to the right,915,0.16376093360773528
+D,266,push_blue_block_right: push right the blue block,1478,0.22225121084943475
+D,267,"rotate_blue_block_right: grasp the blue block, then rotate it right",731,0.2533766527121272
+D,268,push_pink_block_right: push the pink block to the right,965,0.16354525954573573
+D,269,push_blue_block_left: push left the blue block,1219,0.2017755396878064
+D,270,rotate_red_block_right: rotate right the red block,1011,0.278467575207898
+D,271,"rotate_red_block_right: grasp the red block, then turn it right",1021,0.26667337011578734
+D,272,push_blue_block_right: go slide the blue block to the right,971,0.15999307761968226
+D,273,push_pink_block_right: sweep the pink block to the right,775,0.1805062216255934
+D,274,rotate_pink_block_right: grasp the pink block and rotate it right,780,0.252816922752521
+D,275,push_red_block_left: push left the red block,1062,0.16897574468058044
+D,276,push_red_block_left: slide the red block to the left,1382,0.18283989316987362
+D,277,push_red_block_right: go slide the red block to the right,665,0.23812071803144944
+D,278,lift_pink_block_slider: lift the pink block lying in the cabinet,715,0.1885242470702925
+D,279,push_blue_block_left: go push the blue block to the left,905,0.19776261685344065
+D,280,lift_pink_block_slider: grasp the pink block lying in the slider,520,0.22928310066748123
+D,281,rotate_pink_block_left: rotate the pink block 90 degrees to the left,910,0.2852128470336998
+D,282,push_red_block_right: go push the red block to the right,648,0.2156494048130871
+D,283,rotate_pink_block_left: rotate left the pink block,845,0.30310798257412996
+D,284,rotate_blue_block_left: turn the blue block left,1270,0.27365440342604647
+D,285,push_pink_block_right: slide the pink block towards the right,1287,0.17533246970937386
+D,286,push_pink_block_left: slide the pink block to the left,1135,0.17353758900569924
+D,287,rotate_red_block_right: rotate the red block towards the right,890,0.26859758141335477
+D,288,rotate_red_block_right: grasp the red block and rotate it right,951,0.2569501386988677
+D,289,push_blue_block_right: push the blue block towards the right,930,0.19834988927769084
+D,290,"rotate_blue_block_left: grasp the blue block, then rotate it left",1036,0.2788941384253585
+D,291,rotate_red_block_left: take the red block and turn it left,762,0.25956009459386037
+D,292,rotate_blue_block_right: turn the blue block right,715,0.2637115494146214
+D,293,push_red_block_left: sweep the red block to the left,1201,0.16975372496660454
+D,294,rotate_red_block_left: turn the red block left,598,0.24556975602405925
+D,295,push_pink_block_right: slide the pink block to the right,780,0.22746856114707695
+D,296,push_red_block_right: sweep the red block to the right,977,0.18909140490376777
+D,297,push_blue_block_left: push the blue block towards the left,534,0.2371116675199306
+D,298,push_pink_block_right: slide right the pink block,1202,0.18331182174874275
+D,299,push_red_block_left: push the red block to the left,756,0.18755069609839845
+D,300,rotate_red_block_left: rotate the red block 90 degrees to the left,623,0.2592685871771021
+D,301,push_red_block_left: go push the red block to the left,727,0.2043459475312018
+D,302,push_pink_block_left: push the pink block towards the left,1016,0.14835978793090313
+D,303,push_pink_block_left: go push the pink block to the left,879,0.1536940928819813
+D,304,push_pink_block_right: push the pink block towards the right,597,0.21369398979335974
+D,305,push_blue_block_left: go slide the blue block to the left,1673,0.22600092519312937
+D,306,push_red_block_right: slide right the red block,1162,0.21537383082491088
+D,307,push_blue_block_right: slide the blue block to the right,677,0.2625551575648996
+D,308,rotate_blue_block_right: rotate the blue block to the right,885,0.2500350601508119
+D,309,push_blue_block_right: push the blue block to the right,1102,0.2123510739960439
+D,310,"rotate_red_block_right: grasp the red block, then rotate it right",621,0.2655354750233188
+D,311,push_blue_block_right: sweep the blue block to the right,1047,0.210744919901164
+D,312,push_red_block_right: push right the red block,1267,0.15786299556229136
+D,313,push_blue_block_left: sweep the blue block to the left,1068,0.2305040264899811
+D,314,push_red_block_right: push the red block to the right,1105,0.19816004255137562
+D,315,push_red_block_right: slide the red block to the right,1217,0.2091637683455314
+D,316,move_slider_right: grasp the door handle and move the door to the right,650,0.18421957562749203
+D,317,"place_in_drawer: move to the drawer, then place the object",372,0.28066506993866736
+D,318,push_into_drawer: slide the block into the drawer,663,0.2070076425712932
+D,319,turn_off_lightbulb: move down the switch,650,0.2728027595808873
+D,320,stack_block: place the grasped block on top of another block,932,0.23840211338239678
+D,321,lift_red_block_drawer: go towards the red block in the drawer and lift it,686,0.22038212208940752
+D,322,stack_block: stack the object on top of another object,904,0.24755477478348575
+D,323,place_in_drawer: store the block in the drawer,531,0.3069331942866302
+D,324,"open_drawer: grasp the drawer handle, then open it",910,0.19578963619667095
+D,325,turn_off_lightbulb: move the light switch to turn off the light bulb,910,0.24117089448148732
+D,326,lift_blue_block_drawer: go towards the blue block in the drawer and lift it,1086,0.22133890689654245
+D,327,"move_slider_right: grasp the door handle, then slide the door to the right",975,0.2268065465719272
+D,328,"move_slider_left: grasp the door handle, then slide the door to the left",818,0.2852504559699218
+D,329,lift_pink_block_slider: pick up the pink block from the sliding cabinet,520,0.20709657994313882
+D,330,lift_red_block_table: grasp the red block on the table and lift it up,865,0.2112350076178595
+D,331,lift_pink_block_table: lift the pink block up,821,0.22545867371537362
+D,332,unstack_block: unstack the blocks,1283,0.20768151768800439
+D,333,lift_blue_block_slider: pick up the blue block from the shelf,455,0.18850700956779523
+D,334,place_in_slider: put the object in the slider,72,0.2956912618958288
+D,335,turn_on_led: push the button to turn on the led,374,0.2543313554762041
+D,336,move_slider_left: push the sliding door to the left,715,0.25650997161865235
+D,337,turn_off_led: push the button to turn off the led,602,0.23475395955541403
+D,338,lift_red_block_table: lift the red block up,697,0.20152299938833013
+D,339,"rotate_blue_block_left: grasp the blue block, then turn it left",773,0.26215126634338076
+D,340,move_slider_left: push the door to the left side,502,0.2676802344946747
+D,341,lift_blue_block_slider: in the cabinet grasp the blue block,429,0.17354455301950583
+D,342,turn_off_led: turn off the led lamp,495,0.21089952504544546
+D,343,turn_off_lightbulb: turn off the yellow light,771,0.2262749695225139
+D,344,place_in_slider: put the block in the sliding cabinet,290,0.2776465646151839
+D,345,turn_off_led: push the button to turn off the led light,705,0.23945528536189534
+D,346,turn_off_led: push the button to turn off the green light,425,0.22532006758100845
+D,347,push_pink_block_left: slide left the pink block,1084,0.1759176008691977
+D,348,rotate_blue_block_left: rotate left the blue block,630,0.2633476789508547
+D,349,turn_off_led: turn off the led,555,0.2385366810066206
+D,350,lift_red_block_drawer: lift the red block lying in the drawer,1027,0.21055383342585754
+D,351,place_in_slider: put the object in the cabinet,268,0.2646115992162655
+D,352,place_in_slider: put the grasped object in the sliding cabinet,328,0.26586423955130867
+D,353,rotate_red_block_left: grasp the red block and rotate it left,821,0.26559103204983303
+D,354,lift_pink_block_slider: grasp the pink block lying in the cabinet,622,0.1829992876271343
+D,355,lift_blue_block_table: grasp the blue block on the table and lift it up,696,0.21936282273596044
+D,356,lift_pink_block_slider: lift the pink block lying in the sliding cabinet,260,0.19344265148616754
+D,357,lift_pink_block_slider: in the sliding cabinet grasp the pink block,520,0.19708987384174878
+D,358,lift_pink_block_drawer: lift the pink block in the drawer,777,0.2096294934263254
+D,359,lift_blue_block_slider: lift the blue block lying in the cabinet,504,0.17138238501040234
+D,360,rotate_pink_block_right: grasp the pink block and turn it right,891,0.2714404282144425
+D,361,lift_blue_block_slider: grasp the blue block lying on the shelf,585,0.17244533392099234
+D,362,"rotate_blue_block_right: grasp the blue block, then turn it right",986,0.25505430249848665
+D,363,lift_blue_block_slider: in the sliding cabinet grasp the blue block,455,0.15048014081932687
+D,364,push_red_block_left: push the red block towards the left,1155,0.1919184597733217
+D,365,rotate_blue_block_right: rotate the blue block 90 degrees to the right,833,0.25573984709750563
+D,366,push_blue_block_right: slide the blue block towards the right,515,0.18483057932801616
+D,367,push_pink_block_right: push right the pink block,704,0.13961257635806265
+D,368,push_red_block_left: slide the red block towards the left,650,0.1473556284663769
+D,369,push_red_block_right: push the red block towards the right,938,0.20111788038029346
+D,370,push_blue_block_left: slide the blue block to the left,964,0.21166351095375247
+D,371,stack_block: stack the blocks,887,0.260981205905438
+D,372,lift_blue_block_slider: pick up the blue block in the sliding cabinet,390,0.19233857540365978
+D,373,push_blue_block_left: slide left the blue block,954,0.21062582111731953
+D,374,turn_on_led: turn on the green lamp,435,0.2615921653036414
+D,375,lift_blue_block_slider: in the slider grasp the blue block,520,0.19830520153045655
+D,376,"move_slider_left: slide the door to the left, then let it go",562,0.2872330232712298
+D,377,turn_on_led: turn on the green light,146,0.218276233118895
+D,378,lift_red_block_slider: in the sliding cabinet grasp the red block,520,0.18743003175522271
+D,379,lift_pink_block_slider: lift the pink block lying in the slider,260,0.23472803682088852
+D,380,lift_blue_block_slider: grasp the blue block lying in the slider,295,0.18700695997577602
+D,381,lift_blue_block_slider: in the slider pick up the blue block,325,0.1853714060324889
+D,382,place_in_slider: put the block in the slider,401,0.27808141076653975
+D,383,place_in_drawer: move to the drawer and store the object,379,0.28726916325752844
+D,384,lift_pink_block_slider: in the cabinet grasp the pink block,431,0.18098536716328972
+D,385,place_in_slider: put the object in the sliding cabinet,100,0.277651259303093
+D,386,place_in_slider: put the grasped object in the slider,197,0.2579054933060244
+D,387,move_slider_right: push the door to the right,195,0.2480567176754658
+D,388,lift_blue_block_drawer: pick up the blue block in the drawer,455,0.18737677622299928

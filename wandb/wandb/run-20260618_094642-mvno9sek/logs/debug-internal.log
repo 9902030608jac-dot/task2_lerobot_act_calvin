@@ -1,0 +1,13 @@
+{"time":"2026-06-18T09:46:42.800139497Z","level":"INFO","msg":"stream: starting","core version":"0.24.0"}
+{"time":"2026-06-18T09:46:43.887839683Z","level":"INFO","msg":"stream: created new stream","id":"mvno9sek"}
+{"time":"2026-06-18T09:46:43.887922939Z","level":"INFO","msg":"handler: started","stream_id":"mvno9sek"}
+{"time":"2026-06-18T09:46:43.888089973Z","level":"INFO","msg":"stream: started","id":"mvno9sek"}
+{"time":"2026-06-18T09:46:43.88810528Z","level":"INFO","msg":"sender: started","stream_id":"mvno9sek"}
+{"time":"2026-06-18T09:46:43.888105695Z","level":"INFO","msg":"writer: started","stream_id":"mvno9sek"}
+{"time":"2026-06-18T10:00:37.300052217Z","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/9902030608jac-fudan/task2_lerobot_act_calvin/mvno9sek/file_stream","body":"{\"error\":\"context deadline exceeded\"}"}
+{"time":"2026-06-18T11:04:38.139600567Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-06-18T11:04:38.633001254Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-06-18T11:04:38.636789362Z","level":"INFO","msg":"stream: closing","id":"mvno9sek"}
+{"time":"2026-06-18T11:04:38.636808556Z","level":"INFO","msg":"handler: closed","stream_id":"mvno9sek"}
+{"time":"2026-06-18T11:04:38.636876375Z","level":"INFO","msg":"sender: closed","stream_id":"mvno9sek"}
+{"time":"2026-06-18T11:04:38.63689491Z","level":"INFO","msg":"stream: closed","id":"mvno9sek"}

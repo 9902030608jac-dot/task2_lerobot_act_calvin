@@ -1,0 +1,1 @@
+{"train/time_per_step":0.1770248559769243,"val/total_loss":0.04182130917906761,"_timestamp":1.7817804669959092e+09,"_step":10000,"train/learning_rate":0.0001,"_runtime":4475.012592936,"val/action_l1_loss":0.04095423948019743,"train/total_loss":0.044282324612140656,"train/train_action_l1_loss":0.04259541258215904,"_wandb":{"runtime":4475}}

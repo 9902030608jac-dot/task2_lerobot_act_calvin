@@ -1,0 +1,13 @@
+{"time":"2026-06-18T08:16:14.9008787Z","level":"INFO","msg":"stream: starting","core version":"0.24.0"}
+{"time":"2026-06-18T08:16:15.775069035Z","level":"INFO","msg":"stream: created new stream","id":"680v24i5"}
+{"time":"2026-06-18T08:16:15.775140378Z","level":"INFO","msg":"handler: started","stream_id":"680v24i5"}
+{"time":"2026-06-18T08:16:15.775274058Z","level":"INFO","msg":"stream: started","id":"680v24i5"}
+{"time":"2026-06-18T08:16:15.775292098Z","level":"INFO","msg":"writer: started","stream_id":"680v24i5"}
+{"time":"2026-06-18T08:16:15.775293272Z","level":"INFO","msg":"sender: started","stream_id":"680v24i5"}
+{"time":"2026-06-18T08:16:17.493304386Z","level":"INFO","msg":"api: retrying error","error":"Put \"https://storage.googleapis.com/wandb-production.appspot.com/9902030608jac-fudan/task2_lerobot_act_calvin/680v24i5/wandb-metadata.json?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gorilla-files-url-signer%40wandb-production.iam.gserviceaccount.com%2F20260618%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260618T081617Z&X-Goog-Expires=86399&X-Goog-Signature=2491718f6b003d5df2e9ae6f2b35e48c097b9f425496ff232cd11ea644d8609879676b352b5f62f34f22ba460c1c34880fbf609bb5cb824e29a9d1214b13e3701d437254ec9224d02adefd507e72ffaf732e319055c0eab70e3b9525f5a97c40107c78ec5e60bf8a2482f70e819f0eb6ef00dc7c6e41efd9a5c3c2086993ea2fe8434eba35a25c16b3a0ac138badd0e7fbf931d9c8e2297062744de6c73f4ccee99abb0e0b3765d87496396487e87320c5eb65c7259a251f5c528dc3a4a7559b8cc06fb8759a55603b022eb6c08128114c11bbf67024b2067a24e94191f05573ef6d34bbcf3ffb07357caf90d68a0cf83879a7aa209eb2bd65c8393bb4ddfd6c&X-Goog-SignedHeaders=host&X-User=9902030608jac\": read tcp 10.2.13.72:58570->142.250.73.155:443: read: connection reset by peer"}
+{"time":"2026-06-18T08:20:16.702719247Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-06-18T08:20:17.18723021Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-06-18T08:20:17.196288169Z","level":"INFO","msg":"stream: closing","id":"680v24i5"}
+{"time":"2026-06-18T08:20:17.196324185Z","level":"INFO","msg":"handler: closed","stream_id":"680v24i5"}
+{"time":"2026-06-18T08:20:17.196480085Z","level":"INFO","msg":"sender: closed","stream_id":"680v24i5"}
+{"time":"2026-06-18T08:20:17.196497748Z","level":"INFO","msg":"stream: closed","id":"680v24i5"}

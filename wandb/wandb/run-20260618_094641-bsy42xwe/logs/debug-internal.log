@@ -1,0 +1,13 @@
+{"time":"2026-06-18T09:46:42.153301765Z","level":"INFO","msg":"stream: starting","core version":"0.24.0"}
+{"time":"2026-06-18T09:46:44.524658778Z","level":"INFO","msg":"stream: created new stream","id":"bsy42xwe"}
+{"time":"2026-06-18T09:46:44.52475575Z","level":"INFO","msg":"handler: started","stream_id":"bsy42xwe"}
+{"time":"2026-06-18T09:46:44.524928207Z","level":"INFO","msg":"stream: started","id":"bsy42xwe"}
+{"time":"2026-06-18T09:46:44.524939437Z","level":"INFO","msg":"writer: started","stream_id":"bsy42xwe"}
+{"time":"2026-06-18T09:46:44.524961457Z","level":"INFO","msg":"sender: started","stream_id":"bsy42xwe"}
+{"time":"2026-06-18T10:00:21.918970197Z","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/9902030608jac-fudan/task2_lerobot_act_calvin/bsy42xwe/file_stream","body":"{\"error\":\"context deadline exceeded\"}"}
+{"time":"2026-06-18T11:00:56.063745038Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-06-18T11:00:56.629026547Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-06-18T11:00:56.633788024Z","level":"INFO","msg":"stream: closing","id":"bsy42xwe"}
+{"time":"2026-06-18T11:00:56.633819392Z","level":"INFO","msg":"handler: closed","stream_id":"bsy42xwe"}
+{"time":"2026-06-18T11:00:56.633948708Z","level":"INFO","msg":"sender: closed","stream_id":"bsy42xwe"}
+{"time":"2026-06-18T11:00:56.633983662Z","level":"INFO","msg":"stream: closed","id":"bsy42xwe"}

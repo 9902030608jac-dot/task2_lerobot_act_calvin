@@ -1,0 +1,24 @@
+2026-06-18 08:21:32,091 INFO    MainThread:1059174 [wandb_setup.py:_flush():81] Current SDK version is 0.24.0
+2026-06-18 08:21:32,091 INFO    MainThread:1059174 [wandb_setup.py:_flush():81] Configure stats pid to 1059174
+2026-06-18 08:21:32,091 INFO    MainThread:1059174 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-06-18 08:21:32,091 INFO    MainThread:1059174 [wandb_init.py:setup_run_log_directory():717] Logging user logs to /data/jacicon/task2_lerobot_act_calvin/wandb/wandb/run-20260618_082132-sv2s0fq1/logs/debug.log
+2026-06-18 08:21:32,091 INFO    MainThread:1059174 [wandb_init.py:setup_run_log_directory():718] Logging internal logs to /data/jacicon/task2_lerobot_act_calvin/wandb/wandb/run-20260618_082132-sv2s0fq1/logs/debug-internal.log
+2026-06-18 08:21:32,091 INFO    MainThread:1059174 [wandb_init.py:init():844] calling init triggers
+2026-06-18 08:21:32,091 INFO    MainThread:1059174 [wandb_init.py:init():849] wandb.init called with sweep_config: {}
+config: {'project_name': 'task2_lerobot_act_calvin', 'seed': 42, 'device': 'cuda', 'hf_dataset_repo': 'xiaoma26/calvin-lerobot', 'hf_dataset_revision': 'main', 'hf_dataset_local_dir': 'data/raw/xiaoma26_calvin_lerobot', 'hf_dataset_endpoint': 'https://hf-mirror.com', 'hf_dataset_downloader': 'hf_cli', 'hf_cli_executable': 'hf', 'hub_pub_executable': 'hub-pub', 'hub_pub_command_template': None, 'hf_dataset_max_workers': 8, 'hf_dataset_max_retries': 30, 'hf_dataset_retry_sleep': 10.0, 'hf_dataset_etag_timeout': 300.0, 'hf_dataset_download_timeout': 300.0, 'policy_type': 'act', 'network_architecture': 'lerobot_act_default', 'pretrained_backbone_weights': None, 'image_keys': ['observation.images.rgb_static', 'observation.images.rgb_gripper'], 'state_key': 'observation.state', 'action_key': 'action', 'task_key': 'task', 'batch_size': 128, 'learning_rate': 0.0001, 'weight_decay': 1e-05, 'optimizer': 'adamw', 'loss_function': 'action_l1', 'gradient_clip_norm': 1.0, 'num_train_steps': 10000, 'log_interval': 100, 'save_interval': 1000, 'eval_interval': 1000, 'validation_split': 0.1, 'max_val_batches': 20, 'chunk_size': 100, 'temporal_ensemble': True, 'num_workers': 8, 'dataset_adapter': 'calvin_v21_parquet', 'dataset_cache_size': 32, 'max_train_episodes_per_split': None, 'persistent_workers': True, 'prefetch_factor': 4, 'use_wandb': True, 'use_swanlab': False, 'offline_eval_only': True, 'max_eval_episodes': 100, 'run_name': 'act_ABC_seed42', 'train_envs': ['A', 'B', 'C'], 'hf_dataset_subdirs': ['splitA', 'splitB', 'splitC'], 'dataset_path': 'data/processed/calvin_ABC_lerobot', 'output_dir': 'outputs/train/act_ABC_seed42', '_wandb': {}}
+2026-06-18 08:21:32,091 INFO    MainThread:1059174 [wandb_init.py:init():892] starting backend
+2026-06-18 08:21:32,369 INFO    MainThread:1059174 [wandb_init.py:init():895] sending inform_init request
+2026-06-18 08:21:32,374 INFO    MainThread:1059174 [wandb_init.py:init():903] backend started and connected
+2026-06-18 08:21:32,376 INFO    MainThread:1059174 [wandb_init.py:init():973] updated telemetry
+2026-06-18 08:21:32,381 INFO    MainThread:1059174 [wandb_init.py:init():997] communicating run to backend with 90.0 second timeout
+2026-06-18 08:21:34,127 INFO    MainThread:1059174 [wandb_init.py:init():1044] starting run threads in backend
+2026-06-18 08:21:34,242 INFO    MainThread:1059174 [wandb_run.py:_console_start():2529] atexit reg
+2026-06-18 08:21:34,242 INFO    MainThread:1059174 [wandb_run.py:_redirect():2377] redirect: wrap_raw
+2026-06-18 08:21:34,242 INFO    MainThread:1059174 [wandb_run.py:_redirect():2446] Wrapping output streams.
+2026-06-18 08:21:34,243 INFO    MainThread:1059174 [wandb_run.py:_redirect():2469] Redirects installed.
+2026-06-18 08:21:34,246 INFO    MainThread:1059174 [wandb_init.py:init():1084] run started, returning control to user process
+2026-06-18 09:35:56,826 INFO    MainThread:1059174 [wandb_run.py:_finish():2295] finishing run 9902030608jac-fudan/task2_lerobot_act_calvin/sv2s0fq1
+2026-06-18 09:35:56,826 INFO    MainThread:1059174 [wandb_run.py:_atexit_cleanup():2494] got exitcode: 0
+2026-06-18 09:35:56,827 INFO    MainThread:1059174 [wandb_run.py:_restore():2476] restore
+2026-06-18 09:35:56,827 INFO    MainThread:1059174 [wandb_run.py:_restore():2482] restore done
+2026-06-18 09:39:08,296 INFO    MainThread:1059174 [wandb_run.py:_footer_sync_info():3870] logging synced files

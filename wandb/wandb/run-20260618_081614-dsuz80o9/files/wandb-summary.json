@@ -1,0 +1,1 @@
+{"_runtime":236.190801961,"train/train_action_l1_loss":0.07917370647192001,"_step":269,"val/total_loss":63.159596061706544,"_timestamp":1.7817708141663082e+09,"val/action_l1_loss":0.6466915309429169,"train/time_per_step":0.2048285158816725,"train/learning_rate":0.0001,"_wandb":{"runtime":236},"train/total_loss":0.47622445225715637}

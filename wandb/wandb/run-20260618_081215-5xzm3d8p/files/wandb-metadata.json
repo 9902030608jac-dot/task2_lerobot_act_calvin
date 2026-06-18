@@ -1,0 +1,27 @@
+{
+  "os": "Linux-6.8.0-88-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.12.13",
+  "startedAt": "2026-06-18T08:12:15.538628Z",
+  "args": [
+    "--config",
+    "configs/train_A_only.yaml",
+    "--device",
+    "cuda",
+    "--override",
+    "seed=43",
+    "run_name=act_A_only_seed43",
+    "output_dir=outputs/train/act_A_only_seed43"
+  ],
+  "program": "/data/jacicon/task2_lerobot_act_calvin/scripts/03_train_act.py",
+  "codePath": "scripts/03_train_act.py",
+  "codePathLocal": "scripts/03_train_act.py",
+  "git": {
+    "remote": "https://github.com/9902030608jac-dot/task2_lerobot_act_calvin.git",
+    "commit": "396d47722c434116bb6fa677fc4eeac46a1f19a4"
+  },
+  "email": "9902030608jac@gmail.com",
+  "root": "/data/jacicon/task2_lerobot_act_calvin/wandb",
+  "host": "gene-v100-i-0jlf7atzu52bvunrrecw-0",
+  "executable": "/opt/miniconda/envs/lerobot-act-calvin/bin/python",
+  "writerId": "zl752jdmyw15e1sn4oeh4aq69zejsqex"
+}

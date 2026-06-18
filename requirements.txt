@@ -1,3 +1,5 @@
+--index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
 # Python compatibility:
 #   LeRobot 0.5.x requires Python >= 3.12.
 #
@@ -6,8 +8,7 @@
 #   If your rented GPU image has an older driver, install the matching PyTorch wheel first
 #   from https://pytorch.org/get-started/locally/ and then install the remaining packages.
 
---index-url https://download.pytorch.org/whl/cu128
---extra-index-url https://pypi.org/simple
+
 
 # Core deep learning stack. These versions are inside LeRobot 0.5.x's supported
 # torch>=2.7,<2.12 and torchvision>=0.22,<0.27 window.
